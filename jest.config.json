@@ -1,0 +1,12 @@
+{
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "moduleNameMapper": {
+        "\\.(css|scss)$": "<rootDir>/src/__tests__/__mocks__/styleMock.js"
+    },
+    "testPathIgnorePatterns": [
+        "/node_modules/", "<rootDir>/src/__tests__/__mocks__/"
+    ]
+}
+  
