@@ -1,0 +1,52 @@
+{
+  "name": "reactjs-mentoring",
+  "version": "1.0.0",
+  "description": "ReactJS Global Mentoring Program 2020Q3",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKarmaz/ReactJS-Mentoring.git"
+  },
+  "author": "AlexKarmaz",
+  "license": "ISC",
+  "keywords": [
+    "react-js"
+  ],
+  "bugs": {
+    "url": "https://github.com/AlexKarmaz/ReactJS-Mentoring/issues"
+  },
+  "homepage": "https://github.com/AlexKarmaz/ReactJS-Mentoring#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
