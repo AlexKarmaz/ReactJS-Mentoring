@@ -2,7 +2,6 @@ const path = require("path");
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config.common");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 var CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 
 module.exports = merge(common, {
@@ -22,7 +21,6 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin(),
     new CaseSensitivePathsPlugin(),
   ],
 });
