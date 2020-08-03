@@ -38,8 +38,8 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "dev": "cross-env NODE_ENV=development webpack",
-    "build": "cross-env NODE_ENV=production webpack",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "build:prod": "cross-env NODE_ENV=production webpack",
     "test": "jest"
   },
   "repository": {
