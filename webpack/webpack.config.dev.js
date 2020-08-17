@@ -11,6 +11,8 @@ module.exports = merge(common, {
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true,
+    compress: true,
+    open: true
   },
   devtool: "inline-source-map",
   optimization: {
