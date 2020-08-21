@@ -1,0 +1,39 @@
+.searchTitle {
+    color: #ffffff;
+    letter-spacing: 5px;
+    font-size: 48px;
+    font-weight: 100;
+}
+
+.searchWrapper{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.searchButton {
+    height: 60px;
+    width: 240px;
+    background-color: F65261;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 3px;
+    font-size: 19px;
+    color: #ffffff;
+}
+
+.searchInput {
+    width: 650px;
+    height: 60px;
+    background-color: rgb(239, 239, 239);
+    padding: 0 20px;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.searchInput:focus {
+    border: 1px solid #E63B3B;
+}
+
+.search {
+    display: inline-flex;
+}

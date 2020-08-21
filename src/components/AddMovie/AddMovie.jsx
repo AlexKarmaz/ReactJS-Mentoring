@@ -1,7 +1,8 @@
 import React from 'react';
+import './AddMovie.css';
 
 const AddMovie = () => (
-    <button>+ ADD MOVIE</button>
+    <button className="addMovieBtn">+ ADD MOVIE</button>
 );
 
 export default AddMovie

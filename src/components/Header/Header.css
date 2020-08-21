@@ -4,4 +4,11 @@
     background-position: center;
     background-size: cover;
     min-height: 300px;
+    overflow: hidden;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 55px 0 55px;
 }
