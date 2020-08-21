@@ -19,12 +19,22 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      }
     ],
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, '..', "dist/"),
     filename: "[name].bundle.js",
   },
   plugins: [
