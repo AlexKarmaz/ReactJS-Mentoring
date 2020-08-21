@@ -20,15 +20,15 @@ module.exports = {
         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: [{
+            loader: 'file-loader',
             options: {
-              limit: 8192,
-            },
-          },
-        ],
+                name: '[name].[ext]',
+                outputPath: 'images/',
+                esModule: false
+            }
+        }]
       }
     ],
   },
@@ -41,7 +41,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
         template: 'public/index.html',
-      }),
+    }),
     new MiniCssExtractPlugin()
   ],
 };

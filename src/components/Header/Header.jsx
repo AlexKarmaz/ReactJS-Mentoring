@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import AddMovie from "../AddMovie"
 import SearchMovie from '../SearchMovie';
 import './Header.css';
-import img from '../../../public/images/searchBackground.jpg';
+//import img from '../../../public/images/headerBackground.jpg';
 
 const Header = () => (
     <header className="header">
@@ -13,7 +13,7 @@ const Header = () => (
         </div>
         <h1>FIND YOUR MOVIE</h1>
         <SearchMovie/>
-        <img src="../../../public/images/searchBackground.jpg" alt=""/>
+
     </header>
 );
 

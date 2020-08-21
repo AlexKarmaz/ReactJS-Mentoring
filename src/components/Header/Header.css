@@ -1,6 +1,7 @@
 .header {
-    background-image: url("../../../public/images/searchBackground.jpg");
+    background-image: linear-gradient(to top,rgba(0,0,0,.4) 0,rgba(0,0,0,.4) 1%), url("../../../public/images/headerBackground.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover
+    background-size: cover;
+    min-height: 300px;
 }
