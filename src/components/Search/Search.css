@@ -28,6 +28,7 @@
     padding: 0 20px;
     margin-right: 10px;
     font-size: 25px;
+    border: none;
 }
 
 .searchInput:focus {
