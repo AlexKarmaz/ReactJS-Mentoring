@@ -1,0 +1,30 @@
+.filterList{
+    list-style: none;
+    display: flex;
+    padding: inherit;
+    margin: inherit;
+}
+
+.filterListItem{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border 0.4s;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.filterListItem.active{
+    border-bottom: 2px solid #f65251;
+}
+
+.filterListItem:hover{
+    border-bottom: 2px solid #f65251;
+}
