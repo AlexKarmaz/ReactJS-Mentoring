@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MovieCard.css'
 import defaultPoster from '../../../public/images/defaultPoster.jpg';
 
@@ -15,9 +16,12 @@ const MovieCard = (props) => (
 
 MovieCard.defaultProps = {
     img: defaultPoster,
-    title: "Title",
     description: "Descriprion",
     year: "Some year"
+}
+
+MovieCard.propTypes = {
+    title: PropTypes.string.isRequired
 }
 
 export default MovieCard
