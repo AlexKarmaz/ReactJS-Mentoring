@@ -41,17 +41,21 @@ let movies = [
     }
 ]
 
-const MovieList = (props) => (
-    <div className="movieList"> 
-        {movies.map((movie) => (
-            <MovieCard
-                title={movie.title}
-                description={movie.description}
-                year={movie.year} 
-                key={movie.id}
-            />
-        ))}
-    </div>
-);
+const MovieList = (props) => {
+    //throw new Error('I crashed!');
+
+    return (
+        <div className="movieList"> 
+            {movies.map((movie) => (
+                <MovieCard
+                    title={movie.title}
+                    description={movie.description}
+                    year={movie.year} 
+                    key={movie.id}
+                />
+            ))}
+        </div>
+    )
+};
 
 export default MovieList

@@ -10,6 +10,7 @@ import Footer from "./components/Footer"
 import Logo from "./components/Logo"
 import Sorting from "./components/Sorting"
 import "./App.css";
+import ErrorBoundary from "./components/Common/ErrorBoundary";
 
 class App extends React.Component{
   render(){
@@ -22,7 +23,9 @@ class App extends React.Component{
             rightToolbar={<Sorting/>}
           />
           <MoviesCount/>
-          <MovieList/>
+          <ErrorBoundary>
+            <MovieList/>
+          </ErrorBoundary>
         </Main>
         <Footer>
           <Logo/>
