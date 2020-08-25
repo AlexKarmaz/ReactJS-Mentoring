@@ -1,3 +1,3 @@
-import Sorting from "./Sorting";
+import Sorting from './Sorting';
 
 export default Sorting;

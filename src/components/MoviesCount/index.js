@@ -1,3 +1,3 @@
-import MoviesCount from "./MoviesCount";
+import MoviesCount from './MoviesCount';
 
 export default MoviesCount;

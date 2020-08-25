@@ -3,6 +3,7 @@
     letter-spacing: 5px;
     font-size: 48px;
     font-weight: 100;
+    text-transform: uppercase;
 }
 
 .searchWrapper{
@@ -19,6 +20,7 @@
     letter-spacing: 3px;
     font-size: 19px;
     color: #ffffff;
+    text-transform: uppercase;
 }
 
 .searchInput {

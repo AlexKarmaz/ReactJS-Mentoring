@@ -1,3 +1,3 @@
-import AddMovie from "./AddMovie";
+import AddMovie from './AddMovie';
 
 export default AddMovie;

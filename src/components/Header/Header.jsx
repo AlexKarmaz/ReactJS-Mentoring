@@ -1,17 +1,17 @@
 import React from 'react';
-import Logo from "../Logo";
-import AddMovie from "../AddMovie"
+import Logo from '../Logo';
+import AddMovie from '../AddMovie';
 import Search from '../Search';
 import './Header.css';
 
 const Header = () => (
-    <header className="header">
-        <div className="headerWrapper">
-            <Logo/>
-            <AddMovie/>
+    <header className='header'>
+        <div className='headerWrapper'>
+            <Logo />
+            <AddMovie />
         </div>
-        <Search/>
+        <Search />
     </header>
 );
 
-export default Header
+export default Header;

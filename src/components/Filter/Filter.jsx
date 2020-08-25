@@ -1,5 +1,5 @@
 import React from 'react';
-import './Filter.css'
+import './Filter.css';
 
 const Filter = (props) => (
     <ul className='filterList'>
@@ -11,4 +11,4 @@ const Filter = (props) => (
     </ul>
 );
 
-export default Filter
+export default Filter;

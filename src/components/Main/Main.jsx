@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Main.css'
 
 const Main = (props) => (
-    <div className="main">
+    <div className='main'>
         {props.children}
     </div>
 );
@@ -15,4 +15,4 @@ Main.propTypes = {
     ]).isRequired,
 };
 
-export default Main
+export default Main;
