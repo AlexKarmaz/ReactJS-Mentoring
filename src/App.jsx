@@ -1,36 +1,12 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
-import Header from './components/Header';
-import Toolbar from './components/Toolbar';
-import Main from './components/Main';
-import MovieList from './components/MovieList';
-import MoviesCount from './components/MoviesCount';
-import Filter from './components/Filter';
-import Footer from './components/Footer';
-import Logo from './components/Logo';
-import Sorting from './components/Sorting';
+import HomePage from './containers/HomePage';
 import './App.css';
-import ErrorBoundary from './components/Common/ErrorBoundary';
-
+   
 class App extends React.Component {
     render() {
         return (
-            <>
-                <Header />
-                <Main>
-                    <Toolbar
-                        leftToolbar={<Filter />}
-                        rightToolbar={<Sorting />}
-                    />
-                    <MoviesCount />
-                    <ErrorBoundary>
-                        <MovieList />
-                    </ErrorBoundary>
-                </Main>
-                <Footer>
-                    <Logo />
-                </Footer>
-            </>
+            <HomePage />
         );
     }
 }
