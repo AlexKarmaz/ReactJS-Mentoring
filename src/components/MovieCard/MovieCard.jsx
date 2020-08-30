@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MovieSettings from '../MovieSettings'
 import './MovieCard.css';
 import defaultPoster from '../../../public/images/defaultPoster.jpg';
 
@@ -11,6 +12,7 @@ const MovieCard = (props) => (
             <p className='movieYear'>{props.year}</p>
         </div>
         <p className='movieDescription'>{props.description}</p>
+        <MovieSettings/>
     </div>
 );
 
