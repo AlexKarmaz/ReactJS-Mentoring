@@ -9,6 +9,7 @@ import Footer from '../../components/Footer';
 import Logo from '../../components/Logo';
 import Sorting from '../../components/Sorting';
 import ErrorBoundary from '../../components/Common/ErrorBoundary';
+import DeleteMovieDialog from '../../components/DeleteMovieDialog'
 
 const HomePage = () => {
     const movies = [
@@ -50,30 +51,45 @@ const HomePage = () => {
         },
     ];
 
-    const onMovieEdit = () => {
-        console.log('Edit');
+    const onMovieEdit = (movieId) => {
+        editMovieById(movieId);
     }
 
-    const onMovieDelete = () => {
-        console.log('Delete');
+    const editMovieById = (movieId) => {
+        console.log('Edit ' + movieId);
+    }
+
+    const onMovieDelete = (movieId) => {
+        deleteMovieById(movieId);
+    }
+
+    const deleteMovieById = (movieId) => {
+        console.log('Deleted film with ID:' + movieId);
     }
     
     return (
         <>
             <Header />
             <Main>
-                <Toolbar
-                    leftToolbar={<Filter />}
-                    rightToolbar={<Sorting />}
-                />
+                <Toolbar leftToolbar={<Filter />} rightToolbar={<Sorting />} />
                 <MoviesCount />
                 <ErrorBoundary>
-                    <MovieList movieList={movies} onMovieEdit={onMovieEdit} onMovieDelete={onMovieDelete} />
+                    <MovieList
+                        movieList={movies}
+                        onMovieEdit={onMovieEdit}
+                        onMovieDelete={onMovieDelete}
+                    />
                 </ErrorBoundary>
             </Main>
             <Footer>
                 <Logo />
             </Footer>
+            {true && true && (
+                <DeleteMovieDialog
+                    // onClose={closeDialog}
+                    // onDelete={processFilmDeletion}
+                />
+            )}
         </>
     );
     

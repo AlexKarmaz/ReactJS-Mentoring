@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import MovieSettings from '../MovieSettings'
 import './MovieCard.css';
@@ -6,6 +6,14 @@ import defaultPoster from '../../../public/images/defaultPoster.jpg';
 
 const MovieCard = ({ details, onMovieDelete, onMovieEdit}) => {
     const [hovered, setHovered] = useState(false);
+    const onEdit = useCallback(() => onMovieEdit(details), [
+        onMovieEdit,
+        details,
+    ]);
+    const onDelete = useCallback(() => onMovieDelete(details.id), [
+        onMovieDelete,
+        details,
+    ]);
 
     return (
         <div 
@@ -19,7 +27,7 @@ const MovieCard = ({ details, onMovieDelete, onMovieEdit}) => {
                 <p className='movieYear'>{details.year}</p>
             </div>
             <p className='movieDescription'>{details.description}</p>
-            <MovieSettings onDelete={onMovieDelete} onEdit={onMovieEdit} isHovered={hovered}/>
+            <MovieSettings onDelete={onDelete} onEdit={onEdit} isHovered={hovered}/>
         </div>
     )
 };
