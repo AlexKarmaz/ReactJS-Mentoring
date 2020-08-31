@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalDialog from '../Common/ModalDialog'
+import ModalDialog from '../Common/ModalDialog';
 
 const DeleteMovieDialog = () => (
     <ModalDialog dialogTitle='Delete movie' onDialogClose={() => console.log("CloseDialog")}>

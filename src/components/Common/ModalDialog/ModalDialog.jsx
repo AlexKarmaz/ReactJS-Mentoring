@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import CloseButton from '../CloseButton';
 import './ModalDialog.css';
 
