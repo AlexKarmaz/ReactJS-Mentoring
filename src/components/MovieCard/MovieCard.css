@@ -38,7 +38,3 @@
     color: #999999;
     font-size: 18px;
 }
-
-.movieCard:hover > .movieSettings {
-    display: block;
-}

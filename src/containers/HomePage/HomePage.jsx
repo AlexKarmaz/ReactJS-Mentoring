@@ -10,27 +10,73 @@ import Logo from '../../components/Logo';
 import Sorting from '../../components/Sorting';
 import ErrorBoundary from '../../components/Common/ErrorBoundary';
 
-class HomePage extends React.Component {
-    render() {
-        return (
-            <>
-                <Header />
-                <Main>
-                    <Toolbar
-                        leftToolbar={<Filter />}
-                        rightToolbar={<Sorting />}
-                    />
-                    <MoviesCount />
-                    <ErrorBoundary>
-                        <MovieList />
-                    </ErrorBoundary>
-                </Main>
-                <Footer>
-                    <Logo />
-                </Footer>
-            </>
-        );
+const HomePage = () => {
+    const movies = [
+        {
+            title: 'Pulp Fiction',
+            description: 'Action & Adventure',
+            year: '2004',
+            id: '001',
+        },
+        {
+            title: 'Bohemian Rhapsody',
+            description: 'Drama, Biography',
+            year: '2003',
+            id: '002',
+        },
+        {
+            title: 'Kill Bill',
+            description: 'Oscar winning Movie',
+            year: '1994',
+            id: '003',
+        },
+        {
+            title: 'Pulp Fiction 2',
+            description: 'Action & Adventure',
+            year: '2004',
+            id: '004',
+        },
+        {
+            title: 'Bohemian Rhapsody 2',
+            description: 'Drama, Biography',
+            year: '2003',
+            id: '005',
+        },
+        {
+            title: 'Kill Bill 2',
+            description: 'Oscar winning Movie',
+            year: '1994',
+            id: '006',
+        },
+    ];
+
+    const onMovieEdit = () => {
+        console.log('Edit');
     }
+
+    const onMovieDelete = () => {
+        console.log('Delete');
+    }
+    
+    return (
+        <>
+            <Header />
+            <Main>
+                <Toolbar
+                    leftToolbar={<Filter />}
+                    rightToolbar={<Sorting />}
+                />
+                <MoviesCount />
+                <ErrorBoundary>
+                    <MovieList movieList={movies} onMovieEdit={onMovieEdit} onMovieDelete={onMovieDelete} />
+                </ErrorBoundary>
+            </Main>
+            <Footer>
+                <Logo />
+            </Footer>
+        </>
+    );
+    
 }
 
 export default HomePage;

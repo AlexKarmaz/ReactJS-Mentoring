@@ -1,27 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Menu from '../Common/Menu';
 import IconButton from '../Common/IconButton';
 import './MovieSettings.css';
 import threeDotsIcon from '../../../public/images/icon-threeDots-white.png';
 
-let menuItems = [
-    {
-        id: '001',
-        title: 'Edit',
-        onClick: () => console.log('Edit'),
-    },
-    {
-        id: '002',
-        title: 'Delete',
-        onClick: () => console.log('Delete'),
-    },
-];
-
-const MovieSettings = (setingsMenuItems) => {
+const MovieSettings = ({setingsMenuItems, onEdit, onDelete, isHovered}) => {
     const [isOpened, setIsOpened] = useState(false);
+    
+    useEffect (() => {
+        if(!isHovered) {
+            setIsOpened(false);
+        }
+    });
+
+    let menuItems = [
+        {
+            id: '001',
+            title: 'Edit',
+            onClick: onEdit,
+        },
+        {
+            id: '002',
+            title: 'Delete',
+            onClick: onDelete,
+        },
+    ];
 
     return (
-        <div className='movieSettings'>
+        <div className={`movieSettings ${isHovered ? 'visible' : ''}`}>
             {!isOpened && (
                 <IconButton
                     size={'medium'}
