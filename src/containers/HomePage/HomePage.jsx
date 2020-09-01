@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../../components/Header';
 import Toolbar from '../../components/Toolbar';
 import Main from '../../components/Main';
@@ -51,7 +51,14 @@ const HomePage = () => {
         },
     ];
 
+    const [showDialog, setShowDialog] = useState(false);
+
+    const closeDialog = () => {
+        setShowDialog(false);
+      };
+
     const onMovieEdit = (movieId) => {
+        setShowDialog(true);
         editMovieById(movieId);
     }
 
@@ -60,6 +67,7 @@ const HomePage = () => {
     }
 
     const onMovieDelete = (movieId) => {
+        setShowDialog(true);
         deleteMovieById(movieId);
     }
 
@@ -84,9 +92,9 @@ const HomePage = () => {
             <Footer>
                 <Logo />
             </Footer>
-            {true && true && (
+            {showDialog && (
                 <DeleteMovieDialog
-                    // onClose={closeDialog}
+                    onClose={closeDialog}
                     // onDelete={processFilmDeletion}
                 />
             )}

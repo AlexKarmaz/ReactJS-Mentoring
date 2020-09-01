@@ -11,8 +11,8 @@
 }
 
 .closeButton.medium{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .closeButton.small{
@@ -21,8 +21,8 @@
 }
 
 .closeButton.medium > img {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 }
 
 .closeButton.small > img {

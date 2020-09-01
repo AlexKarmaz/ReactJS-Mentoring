@@ -11,7 +11,7 @@ const MovieSettings = ({setingsMenuItems, onEdit, onDelete, isHovered}) => {
         if(!isHovered) {
             setIsOpened(false);
         }
-    });
+    }, [isHovered]);
 
     let menuItems = [
         {
