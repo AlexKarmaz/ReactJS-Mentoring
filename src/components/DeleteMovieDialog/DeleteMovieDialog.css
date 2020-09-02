@@ -1,4 +1,5 @@
 .deleteDialogConfirm-button {   
     display: inline-flex;
     justify-content: flex-end;
+    margin: 20px;
 }
