@@ -55,7 +55,7 @@ const HomePage = () => {
 
     const closeDialog = () => {
         setMovieForDeletion(null);
-      };
+    };
 
     const onMovieEdit = (movieId) => {
         editMovieById(movieId);
@@ -69,9 +69,10 @@ const HomePage = () => {
         setMovieForDeletion(movieId);
     }
 
-    // const deleteMovieById = (movieId) => {
-    //     console.log('Deleted film with ID:' + movieId);
-    // }
+    const deleteSelectedMovie = () => {
+        console.log('Deleted film with ID:' + movieForDeletion);
+        setMovieForDeletion(null);
+    }
     
     return (
         <>
@@ -93,7 +94,7 @@ const HomePage = () => {
             {movieForDeletion && (
                 <DeleteMovieDialog
                     onClose={closeDialog}
-                    // onDelete={processFilmDeletion}
+                    onDelete={deleteSelectedMovie}
                 />
             )}
         </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './IconButton.css'
+import './IconButton.css';
 
 const IconButton = ({size='medium', onClick, imgSrc}) => (
     <button className={`iconButton ${size}`} onClick={onClick}>
