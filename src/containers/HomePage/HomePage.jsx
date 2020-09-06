@@ -55,12 +55,12 @@ const HomePage = () => {
 
     const [movieForDeletion, setMovieForDeletion] = useState();
     const [movieForEdit, setMovieForEdit] = useState();
-    const [addNewFilm, setAddNewFilm] = useState(false);
+    const [addNewMovie, setAddNewMovie] = useState(false);
 
     const closeDialog = () => {
         setMovieForDeletion(null);
         setMovieForEdit(null);
-        setAddNewFilm(false);
+        setAddNewMovie(false);
     };
 
     const onMovieEdit = (movie) => {
@@ -76,12 +76,12 @@ const HomePage = () => {
     }
 
     const deleteSelectedMovie = () => {
-        console.log('Deleted film with ID:' + movieForDeletion);
+        console.log('Deleted movie with ID:' + movieForDeletion);
         setMovieForDeletion(null);
     }
 
     const onAddMovie = () =>  {
-        setAddNewFilm(true);
+        setAddNewMovie(true);
     }
     
     return (
@@ -113,7 +113,7 @@ const HomePage = () => {
                     movieForEdit={movieForEdit}
                 />
             )}
-            {addNewFilm && (
+            {addNewMovie && (
                 <AddMovieDialog
                     onClose={closeDialog}
                 />
