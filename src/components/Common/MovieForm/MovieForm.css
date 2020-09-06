@@ -41,8 +41,12 @@
     --rmsc-bg: #424242;
     --rmsc-hover: #424242;
     --rmsc-selected: #424242;
+    --rmsc-gray: #757575;
     --rmsc-border: none;
+    --rmsc-radius:0;
     color: #ffffff;
+    text-transform: capitalize;
+    font-family: Arial;
 }
 
 /* .movieForm input[type="date"]::-webkit-calendar-picker-indicator {

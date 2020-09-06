@@ -10,7 +10,8 @@ import Logo from '../../components/Logo';
 import Sorting from '../../components/Sorting';
 import ErrorBoundary from '../../components/Common/ErrorBoundary';
 import DeleteMovieDialog from '../../components/DeleteMovieDialog';
-import AddMovieDialog from '../../components/AddMovieDialog'
+import EditMovieDialog from '../../components/EditMovieDialog';
+import AddMovieDialog from '../../components/AddMovieDialog';
 
 const HomePage = () => {
     const movies = [
@@ -53,20 +54,22 @@ const HomePage = () => {
     ];
 
     const [movieForDeletion, setMovieForDeletion] = useState();
+    const [movieForEdit, setMovieForEdit] = useState();
     const [addNewFilm, setAddNewFilm] = useState(false);
 
     const closeDialog = () => {
         setMovieForDeletion(null);
+        setMovieForEdit(null);
         setAddNewFilm(false);
     };
 
-    const onMovieEdit = (movieId) => {
-        editMovieById(movieId);
+    const onMovieEdit = (movie) => {
+        setMovieForEdit(movie)
     }
 
-    const editMovieById = (movieId) => {
-        console.log('Edit ' + movieId);
-    }
+    // const editMovieById = (movieId) => {
+    //     console.log('Edit ' + movieId);
+    // }
 
     const onMovieDelete = (movieId) => {
         setMovieForDeletion(movieId);
@@ -104,10 +107,15 @@ const HomePage = () => {
                     onDelete={deleteSelectedMovie}
                 />
             )}
+            {movieForEdit && (
+                <EditMovieDialog
+                    onClose={closeDialog}
+                    movieForEdit={movieForEdit}
+                />
+            )}
             {addNewFilm && (
                 <AddMovieDialog
                     onClose={closeDialog}
-                    // onDelete={deleteSelectedMovie}
                 />
             )}
         </>
