@@ -8,9 +8,43 @@
 .movieForm-footer {
     display: inline-flex;
     justify-content: flex-end;
-    margin: 20px;
+    margin: 60px 0;
 }
 
 .movieForm-footer button{
     margin-left: 10px;
 }
+
+.movieForm label {
+    display: block;
+    text-transform: uppercase;
+    color: #F65261;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.movieForm label > * {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.movieForm input {
+    background-color: #424242;
+    color: #ffffff;
+    border: none;
+    font-size: inherit;
+    padding: 10px;
+}
+
+.movieForm .multi-select {
+    --rmsc-main: #424242;
+    --rmsc-bg: #424242;
+    --rmsc-hover: #424242;
+    --rmsc-selected: #424242;
+    --rmsc-border: none;
+    color: #ffffff;
+}
+
+/* .movieForm input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: #F65261;
+} */

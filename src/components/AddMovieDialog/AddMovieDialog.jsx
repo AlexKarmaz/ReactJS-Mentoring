@@ -1,7 +1,6 @@
 import React, {useCallback} from 'react';
 import ModalDialog from '../Common/ModalDialog';
 import MovieForm from '../Common/MovieForm'
-import './AddMovieDialog.css';
 
 const AddMovieDialog = ({onClose}) => {
     const onDialogClose = useCallback(() => onClose(), [onClose]);

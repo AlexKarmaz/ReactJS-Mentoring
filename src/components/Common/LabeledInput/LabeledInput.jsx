@@ -1,15 +1,17 @@
 import React from 'react';
 
-const LabeledInput = () => (
-    <label htmlFor={id}>
+const LabeledInput = ({title, name, type='text', value, onChange, placeholder, readOnly=false}) => (
+    <label>
         {title}
         <input
-            id={id}
             name={name}
             type={type}
-            style={{ disabled }}
             value={value}
             onChange={onChange}
+            placeholder={placeholder}
+            readOnly={readOnly}
         />
     </label>
 );
+
+export default LabeledInput;
