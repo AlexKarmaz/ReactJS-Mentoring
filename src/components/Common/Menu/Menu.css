@@ -1,5 +1,6 @@
 .menu{
     list-style-type: none;
     background: #232323;
-    color: #ffffff
+    color: #ffffff;
+    z-index: 1;
 }

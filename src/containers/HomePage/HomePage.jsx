@@ -53,6 +53,19 @@ const HomePage = () => {
         },
     ];
 
+    const sortingOptions = [
+        {
+            id: '011',
+            title: 'Release date',
+            onClick: () => console.log('Release date'),
+        },
+        {
+            id: '022',
+            title: 'Title',
+            onClick: () => console.log('Title'),
+        },
+    ];
+
     const [movieForDeletion, setMovieForDeletion] = useState();
     const [movieForEdit, setMovieForEdit] = useState();
     const [addNewMovie, setAddNewMovie] = useState(false);
@@ -88,7 +101,7 @@ const HomePage = () => {
         <>
             <Header onAddMovie={onAddMovie} />
             <Main>
-                <Toolbar leftToolbar={<Filter />} rightToolbar={<Sorting />} />
+                <Toolbar leftToolbar={<Filter />} rightToolbar={<Sorting options={sortingOptions}/>} />
                 <MoviesCount />
                 <ErrorBoundary>
                     <MovieList
