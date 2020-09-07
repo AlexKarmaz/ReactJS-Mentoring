@@ -19,19 +19,29 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
       },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: [{
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]',
+                outputPath: 'images/',
+                esModule: false
+            }
+        }]
+      }
     ],
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, '..', "dist/"),
     filename: "[name].bundle.js",
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
         template: 'public/index.html',
-      }),
+    }),
     new MiniCssExtractPlugin()
   ],
 };

@@ -1,0 +1,10 @@
+.addMovieBtn {
+    color: F65261;
+    cursor: pointer;
+    height: 45px;
+    width: 150px;
+    font-weight: 750;
+    margin-top: 10px;
+    word-spacing: 3px;
+    text-transform: uppercase;
+}

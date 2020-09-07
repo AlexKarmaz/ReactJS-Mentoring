@@ -1,0 +1,39 @@
+.moviePoster {
+    height: 500px;
+}
+
+.movieCard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.movieInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 5px 0;
+}
+
+.movieInfo h3 {
+    color: #999999;
+    font-size: 24px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.movieYear {
+    color: #999999;
+    font-size: 18px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    padding: 0px 8px;
+    height: fit-content;
+    margin: 0;
+}
+
+.movieDescription {
+    margin: 0;
+    color: #999999;
+    font-size: 18px;
+}

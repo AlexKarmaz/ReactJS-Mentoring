@@ -7,9 +7,8 @@ var CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 module.exports = merge(common, {
   mode: "development",
   devServer: {
-    contentBase: path.join(__dirname, "dev"),
+    contentBase: path.join(__dirname, '..', "dist"),
     port: 3000,
-    publicPath: "http://localhost:3000/dist/",
     hotOnly: true,
     compress: true,
     open: true

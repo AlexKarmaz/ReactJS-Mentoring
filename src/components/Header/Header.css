@@ -1,0 +1,14 @@
+.header {
+    background-image: linear-gradient(to top,rgba(0,0,0,.4) 0,rgba(0,0,0,.4) 1%), url("../../../public/images/headerBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 55px 0 55px;
+}
