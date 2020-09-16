@@ -1,0 +1,11 @@
+.moviePreview {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    margin: 20px 55px;
+}
+
+.moviePreview .movieDetails {
+    
+}

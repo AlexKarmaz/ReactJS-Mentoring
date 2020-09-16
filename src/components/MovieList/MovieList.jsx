@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from '../MovieCard';
 import './MovieList.css';
 
-const MovieList = ({ movieList, onMovieDelete, onMovieEdit}) => {
+const MovieList = ({ movieList, onMovieClick, onMovieDelete, onMovieEdit}) => {
 
     return (
         <div className='movieList'>
@@ -12,6 +12,7 @@ const MovieList = ({ movieList, onMovieDelete, onMovieEdit}) => {
                     details={movie}
                     onMovieDelete={onMovieDelete}
                     onMovieEdit={onMovieEdit}
+                    onClick={onMovieClick}
                 />
             ))}
         </div>

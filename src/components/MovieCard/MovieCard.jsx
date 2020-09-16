@@ -4,7 +4,7 @@ import MovieSettings from '../MovieSettings'
 import './MovieCard.css';
 import defaultPoster from '../../../public/images/defaultPoster.jpg';
 
-const MovieCard = ({ details, onMovieDelete, onMovieEdit}) => {
+const MovieCard = ({ details, onClick, onMovieDelete, onMovieEdit}) => {
     const [hovered, setHovered] = useState(false);
     const onEdit = useCallback(() => onMovieEdit(details), [
         onMovieEdit,
@@ -14,6 +14,9 @@ const MovieCard = ({ details, onMovieDelete, onMovieEdit}) => {
         onMovieDelete,
         details,
     ]);
+    const onMovieClick = useCallback(() => onClick(details), [
+        onClick
+    ]);
 
     return (
         <div 
@@ -21,7 +24,7 @@ const MovieCard = ({ details, onMovieDelete, onMovieEdit}) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <img className='moviePoster' src={details.img ? details.img : defaultPoster} />
+            <img onClick={onMovieClick} className='moviePoster' src={details.img ? details.img : defaultPoster} />
             <div className='movieInfo'>
                 <h3>{details.title}</h3>
                 <p className='movieYear'>{details.year}</p>

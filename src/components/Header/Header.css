@@ -12,3 +12,8 @@
     justify-content: space-between;
     margin: 10px 55px 0 55px;
 }
+
+.headerWrapper .iconButton.medium > img {
+    height: 32px;
+    width: 32px;
+}

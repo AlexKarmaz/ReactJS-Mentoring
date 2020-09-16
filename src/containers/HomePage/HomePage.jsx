@@ -68,6 +68,7 @@ const HomePage = () => {
 
     const [movieForDeletion, setMovieForDeletion] = useState();
     const [movieForEdit, setMovieForEdit] = useState();
+    const [moviePreview, setMoviePreview] = useState();
     const [addNewMovie, setAddNewMovie] = useState(false);
 
     const closeDialog = () => {
@@ -96,10 +97,15 @@ const HomePage = () => {
     const onAddMovie = () =>  {
         setAddNewMovie(true);
     }
+
+    const onMovieClick = (movie) => {
+        setMoviePreview(movie);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
     
     return (
         <>
-            <Header onAddMovie={onAddMovie} />
+            <Header onAddMovie={onAddMovie} moviePreview={moviePreview} onBackToSearch={() => setMoviePreview(undefined)}/>
             <Main>
                 <Toolbar leftToolbar={<Filter />} rightToolbar={<Sorting options={sortingOptions}/>} />
                 <MoviesCount />
@@ -108,6 +114,7 @@ const HomePage = () => {
                         movieList={movies}
                         onMovieEdit={onMovieEdit}
                         onMovieDelete={onMovieDelete}
+                        onMovieClick={onMovieClick}
                     />
                 </ErrorBoundary>
             </Main>
