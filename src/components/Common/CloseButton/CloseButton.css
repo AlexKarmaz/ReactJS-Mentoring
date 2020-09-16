@@ -1,0 +1,31 @@
+.closeButton {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: #232323;
+}
+
+.closeButton.medium{
+    width: 20px;
+    height: 20px;
+}
+
+.closeButton.small{
+    width: 15px;
+    height: 15px;
+}
+
+.closeButton.medium > img {
+    height: 20px;
+    width: 20px;
+}
+
+.closeButton.small > img {
+    height: 15px;
+    width: 15px;
+}

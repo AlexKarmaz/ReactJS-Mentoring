@@ -1,0 +1,28 @@
+.styledButton{
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 100;
+    width: fit-content;
+    border-color: transparent;
+}
+
+.styledButton.confirm{
+    color: #ffffff;
+    background-color: #f65261;
+}
+
+.styledButton.action{
+    color: #F65261;
+    background-color: #636262d1
+}
+
+.styledButton.reset{
+    color: #F65261;
+    background-color: transparent;
+    border-color: #F65261;
+}
+
+.styledButton.medium{
+    font-size: 20px;
+    padding: 10 20;
+}

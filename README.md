@@ -14,3 +14,8 @@ routing, the task can be done with mocked data.</p>
 <p>Use <ErrorBoundary> component for catching and displaying errors
 <a>https://reactjs.org/docs/error-boundaries.html</a>. You could create one component and wrap
 all your application or use several components.</p>
+
+<h2>Task 4: Components part 2</h2>
+<p>Implement markup and styles for “Add movie”, “Edit”, “Delete” modal windows and
+“sorting”. No need to implement real API calls. Only add pages with mocked data. No
+need to implement hooks in this task.</p>
