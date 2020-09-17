@@ -6,8 +6,9 @@ const MoviePreview = ({movie}) => (
     <div className='moviePreview'>
         <img src={movie.img ? movie.img : defaultPoster} />
         <div className='movieDetails'>
-            <h3>{movie.title}</h3>
+            <h1 className='movieTitle'>{movie.title}</h1>
             <p className='movieRating'>{movie.rating}</p>
+            <p className='movieGenre'>{movie.genre}</p>
             <p className='movieYear'>{movie.year}</p>
             <p className="movieRuntime">{movie.runtime}</p>
             <p className='movieDescription'>{movie.description}</p>

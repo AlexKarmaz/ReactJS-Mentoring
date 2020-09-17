@@ -17,38 +17,62 @@ const HomePage = () => {
     const movies = [
         {
             title: 'Pulp Fiction',
-            description: 'Action & Adventure',
+            genre: 'Action & Adventure',
+            description:
+                'Action & Adventure Action & Adventure Action & Adventure Action & Adventure',
             year: '2004',
+            rating: '4.3',
+            runtime: '125 min',
             id: '001',
         },
         {
             title: 'Bohemian Rhapsody',
-            description: 'Drama, Biography',
+            genre: 'Drama, Biography',
+            description:
+                'Drama, Biography Drama, BiographyDrama, Biography Drama, Biography',
             year: '2003',
+            rating: '4.3',
+            runtime: '125 min',
             id: '002',
         },
         {
             title: 'Kill Bill',
-            description: 'Oscar winning Movie',
+            genre: 'Oscar winning Movie',
+            description:
+                'Oscar winning Movie Oscar winning Movie Oscar winning Movie Oscar winning Movie Oscar winning  car winning Movie TEST TEST TEST TEST TEST  V Movie TEST TEST TEST TEST TEST  V ',
             year: '1994',
+            rating: '4.3',
+            runtime: '125 min',
             id: '003',
         },
         {
             title: 'Pulp Fiction 2',
-            description: 'Action & Adventure',
+            genre: 'Action & Adventure',
+            description:
+                'Action & Adventure Action & Adventure Action & Adventure Action & Adventure',
             year: '2004',
+            rating: '4.3',
+            runtime: '125 min',
             id: '004',
         },
         {
             title: 'Bohemian Rhapsody 2',
-            description: 'Drama, Biography',
+            genre: 'Drama, Biography',
+            description:
+                'Drama, Biography Drama, Biography Drama, Biography Drama, Biography',
             year: '2003',
+            rating: '4.3',
+            runtime: '125 min',
             id: '005',
         },
         {
             title: 'Kill Bill 2',
-            description: 'Oscar winning Movie',
+            genre: 'Oscar winning Movie',
+            description:
+                'Oscar winning Movie Oscar winning Movie Oscar winning Movie',
             year: '1994',
+            rating: '4.3',
+            runtime: '125 min',
             id: '006',
         },
     ];

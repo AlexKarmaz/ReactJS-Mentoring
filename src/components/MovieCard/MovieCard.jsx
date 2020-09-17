@@ -29,7 +29,7 @@ const MovieCard = ({ details, onClick, onMovieDelete, onMovieEdit}) => {
                 <h3>{details.title}</h3>
                 <p className='movieYear'>{details.year}</p>
             </div>
-            <p className='movieDescription'>{details.description}</p>
+            <p className='movieGenre'>{details.genre}</p>
             <MovieSettings onDelete={onDelete} onEdit={onEdit} isHovered={hovered}/>
         </div>
     )
