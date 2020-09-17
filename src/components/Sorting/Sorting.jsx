@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import useToggle from '../../hooks/useToggle.jsx'
 import Menu from '../Common/Menu';
 import './Sorting.css';
 
 const Sorting = ({ options }) => {
-    const [isOpened, setIsOpened] = useState(false);
+    //const [isOpened, setIsOpened] = useState(false);
+    const [isOpened, toggleIsOpened] = useToggle();
     const [selected, setSelected] = useState(options[0].title);
 
     const modifiedOptions = options.map((option) => {
@@ -13,7 +15,8 @@ const Sorting = ({ options }) => {
             onClick: () => {
                 option.onClick();
                 setSelected(option.title);
-                setIsOpened(false);
+                //setIsOpened(false);
+                toggleIsOpened();
             },
         };
     });
@@ -22,7 +25,7 @@ const Sorting = ({ options }) => {
         <div className='sorting'>
             <div className='sortingLabel'>Sort by</div>
             <div className='sortingMenu'>{selected}</div>
-            <button className='caretButton' onClick={() => setIsOpened(!isOpened)}>
+            <button className='caretButton' onClick={() => /*setIsOpened(!isOpened)*/ toggleIsOpened()}>
                 <span className={isOpened ? 'caret-up' : 'caret-down'}></span>
             </button>
             {isOpened && <Menu menuItems={modifiedOptions} />}
