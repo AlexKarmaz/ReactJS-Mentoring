@@ -17,38 +17,62 @@ const HomePage = () => {
     const movies = [
         {
             title: 'Pulp Fiction',
-            description: 'Action & Adventure',
+            genre: 'Action & Adventure',
+            description:
+                'Action & Adventure Action & Adventure Action & Adventure Action & Adventure',
             year: '2004',
+            rating: '4.3',
+            runtime: '125 min',
             id: '001',
         },
         {
             title: 'Bohemian Rhapsody',
-            description: 'Drama, Biography',
+            genre: 'Drama, Biography',
+            description:
+                'Drama, Biography Drama, BiographyDrama, Biography Drama, Biography',
             year: '2003',
+            rating: '4.3',
+            runtime: '125 min',
             id: '002',
         },
         {
             title: 'Kill Bill',
-            description: 'Oscar winning Movie',
+            genre: 'Oscar winning Movie',
+            description:
+                'Oscar winning Movie Oscar winning Movie Oscar winning Movie Oscar winning Movie Oscar winning  car winning Movie TEST TEST TEST TEST TEST  V Movie TEST TEST TEST TEST TEST  V ',
             year: '1994',
+            rating: '4.3',
+            runtime: '125 min',
             id: '003',
         },
         {
             title: 'Pulp Fiction 2',
-            description: 'Action & Adventure',
+            genre: 'Action & Adventure',
+            description:
+                'Action & Adventure Action & Adventure Action & Adventure Action & Adventure',
             year: '2004',
+            rating: '4.3',
+            runtime: '125 min',
             id: '004',
         },
         {
             title: 'Bohemian Rhapsody 2',
-            description: 'Drama, Biography',
+            genre: 'Drama, Biography',
+            description:
+                'Drama, Biography Drama, Biography Drama, Biography Drama, Biography',
             year: '2003',
+            rating: '4.3',
+            runtime: '125 min',
             id: '005',
         },
         {
             title: 'Kill Bill 2',
-            description: 'Oscar winning Movie',
+            genre: 'Oscar winning Movie',
+            description:
+                'Oscar winning Movie Oscar winning Movie Oscar winning Movie',
             year: '1994',
+            rating: '4.3',
+            runtime: '125 min',
             id: '006',
         },
     ];
@@ -68,6 +92,7 @@ const HomePage = () => {
 
     const [movieForDeletion, setMovieForDeletion] = useState();
     const [movieForEdit, setMovieForEdit] = useState();
+    const [moviePreview, setMoviePreview] = useState();
     const [addNewMovie, setAddNewMovie] = useState(false);
 
     const closeDialog = () => {
@@ -96,10 +121,15 @@ const HomePage = () => {
     const onAddMovie = () =>  {
         setAddNewMovie(true);
     }
+
+    const onMovieClick = (movie) => {
+        setMoviePreview(movie);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
     
     return (
         <>
-            <Header onAddMovie={onAddMovie} />
+            <Header onAddMovie={onAddMovie} moviePreview={moviePreview} onBackToSearch={() => setMoviePreview(undefined)}/>
             <Main>
                 <Toolbar leftToolbar={<Filter />} rightToolbar={<Sorting options={sortingOptions}/>} />
                 <MoviesCount />
@@ -108,6 +138,7 @@ const HomePage = () => {
                         movieList={movies}
                         onMovieEdit={onMovieEdit}
                         onMovieDelete={onMovieDelete}
+                        onMovieClick={onMovieClick}
                     />
                 </ErrorBoundary>
             </Main>

@@ -19,3 +19,8 @@ all your application or use several components.</p>
 <p>Implement markup and styles for “Add movie”, “Edit”, “Delete” modal windows and
 “sorting”. No need to implement real API calls. Only add pages with mocked data. No
 need to implement hooks in this task.</p>
+
+<h2>Task 5: Hooks</h2>
+<p>Implement markup and styles for “Movie details” page.
+In your project, change Class components into Functional components and use hooks
+where applicable.</p>
