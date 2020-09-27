@@ -24,3 +24,11 @@ need to implement hooks in this task.</p>
 <p>Implement markup and styles for “Movie details” page.
 In your project, change Class components into Functional components and use hooks
 where applicable.</p>
+
+<h2>Task 6 (Redux)</h2>
+<p>1. Go through API docs in swagger: http://localhost:4000/api-docs</p>
+<p>2. Make your components perform real AJAX requests. Implement data fetches as
+async actions and pass data to your components with redux.</p>
+<p>3. Implement creating, editing and updating films according to the design operations
+as redux actions.</p>
+<p>4. Implement filtering and sorting (by genre, rating, and release date) as redux actions.</p>
