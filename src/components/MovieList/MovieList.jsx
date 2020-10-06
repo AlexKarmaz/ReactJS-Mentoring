@@ -9,7 +9,7 @@ const MovieList = ({ movieList, onMovieClick, onMovieDelete, onMovieEdit}) => {
             {movieList.map((movie) => (
                 <MovieCard
                     key={movie.id}
-                    details={movie}
+                    movieItem={movie}
                     onMovieDelete={onMovieDelete}
                     onMovieEdit={onMovieEdit}
                     onClick={onMovieClick}

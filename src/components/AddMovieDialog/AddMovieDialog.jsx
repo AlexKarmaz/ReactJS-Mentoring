@@ -1,15 +1,23 @@
 import React, {useCallback} from 'react';
 import ModalDialog from '../Common/ModalDialog';
 import MovieForm from '../Common/MovieForm'
+import { connect } from 'react-redux'
+import {commonActions, movieActions} from '../../store/actions'
 
-const AddMovieDialog = ({onClose}) => {
+const AddMovieDialog = ({onClose, onConfirm}) => {
     const onDialogClose = useCallback(() => onClose(), [onClose]);
+    const onSubmit = useCallback((data) => onConfirm(data), [onConfirm]);
 
     return (
         <ModalDialog dialogTitle='Add movie' onDialogClose={onDialogClose}>
-            <MovieForm onReset={onDialogClose} onSubmit={() => console.log('submit')}/>
+            <MovieForm onSubmit={onSubmit}/>
         </ModalDialog>
     );
 };
 
-export default AddMovieDialog
+const mapDispatchToProps = (dispatch) => ({
+    onClose: () => dispatch(commonActions.closeAddMovieDialog()),
+    onConfirm: (data) => dispatch(movieActions.addMovie(data))
+})
+
+export default connect(null, mapDispatchToProps)(AddMovieDialog);

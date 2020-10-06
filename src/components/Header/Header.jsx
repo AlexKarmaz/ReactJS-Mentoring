@@ -5,6 +5,8 @@ import StyledButton from '../Common/StyledButton'
 import IconButton from '../Common/IconButton'
 import MoviePreview from '../MoviePreview'
 import searhIcon from '../../../public/images/searchIcon-white.jpg';
+import { connect } from 'react-redux'
+import {commonActions, movieActions} from '../../store/actions'
 import './Header.css';
 
 const Header = ({onAddMovie, moviePreview=false, onBackToSearch}) => {
@@ -37,4 +39,13 @@ const Header = ({onAddMovie, moviePreview=false, onBackToSearch}) => {
     );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+    moviePreview: state.moviesData.moviePreview,
+})
+  
+const mapDispatchToProps = (dispatch) => ({
+    onAddMovie: () => dispatch(commonActions.openAddMovieDialog()),
+    onBackToSearch: () => dispatch(movieActions.setMoviePreview(null))
+})
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

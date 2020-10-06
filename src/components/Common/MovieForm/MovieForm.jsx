@@ -4,15 +4,15 @@ import LabeledInput from '../LabeledInput';
 import LabeledMultiSelect from '../LabeledMultiSelect'
 import './MovieForm.css';
 
-const MovieForm = ({ onSubmit, onReset, movieData = {} }) => {
+const MovieForm = ({ onSubmit, movieData = {} }) => {
     const initialMovieData = {
         id:  movieData.id || '',
         title: movieData.title || '',
-        releaseDate: movieData.releaseDate || '',
-        url: movieData.url || '',
+        release_date: movieData.release_date || '',
+        poster_path: movieData.poster_path || '',
         genres: movieData.genres || [],
         overview: movieData.overview || '',
-        runtime: movieData.runtime || '',
+        runtime: movieData.runtime || 0,
     };
 
     const defaultGenres = [
@@ -24,11 +24,15 @@ const MovieForm = ({ onSubmit, onReset, movieData = {} }) => {
 
     const [data, setData] = useState(initialMovieData);
 
-    const onFormSubmit = useCallback(() => onSubmit(), [onSubmit]);
-    const onFormReset = useCallback(() => onReset(), [onReset]);
+    const onFormSubmit = useCallback(() => onSubmit(data), [data, onSubmit]);
 
-    const onDataChange = useCallback(({ target: { name, value } }) => {
-        setData(data => ({ ...data, [name]: value }));
+    const onFormReset = useCallback(() => setData(initialMovieData), [
+        initialMovieData,
+        setData,
+      ]);
+
+    const onDataChange = useCallback(({ target: { name, value, type } }) => {
+        setData(data => ({ ...data, [name]: type === 'number' ? +value : value }));
     }, [data]);
 
     const onGenreChange = useCallback ((items) => {
@@ -37,7 +41,7 @@ const MovieForm = ({ onSubmit, onReset, movieData = {} }) => {
     }, [data]);
 
     return (
-        <form className='movieForm' onSubmit={onFormSubmit}>
+        <form className='movieForm'>
             {movieData.id && (<LabeledInput
                 name='id'
                 title='Movie id'
@@ -52,17 +56,17 @@ const MovieForm = ({ onSubmit, onReset, movieData = {} }) => {
                 placeholder='Title here'
             />
             <LabeledInput
-                name='releaseDate'
+                name='release_date'
                 title='Release date'
                 type='date'
-                value={data.releaseDate}
+                value={data.release_date}
                 onChange={onDataChange}
             />
             <LabeledInput
-                name='url'
+                name='poster_path'
                 title='Movie url'
                 type='url'
-                value={data.url}
+                value={data.poster_path}
                 onChange={onDataChange}
                 placeholder='Movie URL here'
             />
@@ -97,7 +101,7 @@ const MovieForm = ({ onSubmit, onReset, movieData = {} }) => {
                     type='reset'
                     onClick={onFormReset}
                 />
-                <StyledButton text='Submit' size='medium' type='confirm' />
+                <StyledButton text='Submit' size='medium' type='confirm' onClick={onFormSubmit} />
             </div>
         </form>
     );

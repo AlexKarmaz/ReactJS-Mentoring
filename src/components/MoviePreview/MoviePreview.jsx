@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import defaultPoster from '../../../public/images/defaultPoster.jpg';
 import './MoviePreview.css'
 
-const MoviePreview = ({movie}) => (
-    <div className='moviePreview'>
-        <img src={movie.img ? movie.img : defaultPoster} />
-        <div className='movieDetails'>
-            <h1 className='movieTitle'>{movie.title}</h1>
-            <p className='movieRating'>{movie.rating}</p>
-            <p className='movieGenre'>{movie.genre}</p>
-            <p className='movieYear'>{movie.year}</p>
-            <p className="movieRuntime">{movie.runtime}</p>
-            <p className='movieDescription'>{movie.description}</p>
+const MoviePreview = ({movie}) => {
+    const [src, setSrc] = useState(movie.poster_path);
+
+    useEffect(() => setSrc(movie.poster_path), [movie.poster_path]);
+
+    const replaceToDefaultPoster = () => setSrc(defaultPoster);
+
+    return (
+        <div className='moviePreview'>
+            <img className='moviePoster' onError={replaceToDefaultPoster} src={src ? src : defaultPoster} />
+            <div className='movieDetails'>
+                <h1 className='movieTitle'>{movie.title}</h1>
+                <p className='movieRating'>{movie.vote_average}</p>
+                <p className='movieTagline'>{movie.tagline}</p>
+                <p className='movieYear'>{new Date(movie.release_date).getFullYear()}</p>
+                <p className="movieRuntime">{movie.runtime} {' min'}</p>
+                <p className='movieDescription'>{movie.overview}</p>
+            </div>
         </div>
-    </div>
-);
+    )
+};
 
 MoviePreview.defaultProps = {
     movie: {
-        img: defaultPoster,
-        rating: 0.0,
-        description: 'Descriprion',
-        year: 'Some year',
+        poster_path: defaultPoster,
+        vote_average: 0.0,
+        overview: 'Descriprion',
+        release_date: 'Some year',
     },
 };
 

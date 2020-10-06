@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
 import ModalDialog from '../Common/ModalDialog';
 import StyledButton from '../Common/StyledButton';
+import { connect } from 'react-redux'
+import {movieActions} from '../../store/actions'
 import './DeleteMovieDialog.css'
 
 const DeleteMovieDialog = ({ onClose, onDelete }) => {
@@ -22,4 +24,9 @@ const DeleteMovieDialog = ({ onClose, onDelete }) => {
     );
 };
 
-export default DeleteMovieDialog;
+const mapDispatchToProps = (dispatch) => ({
+    onClose: () => dispatch(movieActions.closeDeleteMovieDialog()),
+    onDelete: () => dispatch(movieActions.deleteMovie())
+})
+
+export default connect(null, mapDispatchToProps)(DeleteMovieDialog);
