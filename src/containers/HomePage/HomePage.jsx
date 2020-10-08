@@ -16,7 +16,7 @@ import AddMovieDialog from '../../components/AddMovieDialog';
 import {movieActions} from '../../store/actions'
 
 const HomePage = ({
-    movies,
+    filteredMovies,
     loadedMoviesCount,
     loadMovies,
     addMovieDialog,
@@ -58,7 +58,7 @@ const HomePage = ({
                 <ErrorBoundary>
                     {loadedMoviesCount > 0 && (
                         <MovieList
-                            movieList={movies}
+                            movieList={filteredMovies}
                             onMovieEdit={setMovieForEdit}
                             onMovieDelete={setMovieForDeletion}
                             onMovieClick={onMovieClick}
@@ -77,7 +77,7 @@ const HomePage = ({
 };
 
 const mapStateToProps = (state) => ({
-    movies: state.moviesData.movies,
+    filteredMovies: state.moviesData.genreForFilter == 'All' ? state.moviesData.movies : state.moviesData.movies.filter((movie) => movie.genres.includes(state.moviesData.genreForFilter)),
     loadedMoviesCount: state.moviesData.movies.length,
     addMovieDialog: state.commonData.addMovieDialog,
     movieForDeletion: state.moviesData.movieForDeletion,

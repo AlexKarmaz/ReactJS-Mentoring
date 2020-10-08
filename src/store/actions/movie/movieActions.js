@@ -13,6 +13,7 @@ export const loadMovies = () => async (dispatch, getState) => {
 
     dispatch(setTotalMoviesCount(data.totalAmount));
     dispatch(moviesLoaded(data.data));
+    dispatch(updateGenres());
 };
 
 export const moviesLoaded = (payload) => ({
@@ -92,3 +93,13 @@ export const addMovie = (movie) => async dispatch => {
 
     dispatch(addMovieInStore(newMovie));
 };
+
+export const updateGenres = () => ({
+    type: movieActionsTypes.UPDATE_GENRES,
+    payload: null,
+});
+
+export const setGenreForFilter = (payload) => ({
+    type: movieActionsTypes.SET_GENRE_FOR_FILTER,
+    payload,
+  });

@@ -5,7 +5,9 @@ const initialState = {
   movieForDeletion: null,
   moviePreview: null,
   movieForEdit: null,
-  totalMoviesCount: 0
+  totalMoviesCount: 0,
+  genres:['All'],
+  genreForFilter:'All'
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -38,6 +40,13 @@ const movieReducer = (state = initialState, action) => {
     case MovieActionTypes.ADD_MOVIE: {
       const newMovie = action.payload;
       return { ...state, movies: [...state.movies, newMovie] };
+    }
+    case MovieActionTypes.UPDATE_GENRES: {
+      const newGenres = new Set(state.movies.map((movie) => movie.genres).flat());
+      return { ...state, genres: ['All', ...newGenres] };
+    }
+    case MovieActionTypes.SET_GENRE_FOR_FILTER: {
+      return { ...state, genreForFilter: action.payload };
     }
     default: {
       return state;
