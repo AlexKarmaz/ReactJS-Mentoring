@@ -4,7 +4,7 @@ import MovieForm from '../Common/MovieForm'
 import { connect } from 'react-redux'
 import {movieActions} from '../../store/actions'
 
-const EditMovieDialog = ({onClose, movieForEdit, onConfirm}) => {
+const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => {
     const onDialogClose = useCallback(() => onClose(), [onClose]);
     const onSubmit = useCallback((data) => onConfirm(data), [onConfirm]);
 
@@ -13,6 +13,7 @@ const EditMovieDialog = ({onClose, movieForEdit, onConfirm}) => {
             <MovieForm
                 onSubmit={onSubmit}
                 movieData={movieForEdit}
+                genres={genres}
             />
         </ModalDialog>
     );
@@ -20,6 +21,7 @@ const EditMovieDialog = ({onClose, movieForEdit, onConfirm}) => {
 
 const mapStateToProps = (state) => ({
     movieForEdit: state.moviesData.movieForEdit,
+    genres: state.moviesData.genres,
 });
 
 const mapDispatchToProps = (dispatch) => ({

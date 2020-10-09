@@ -3,7 +3,7 @@ export const getMovies = async function ({ sorter, filter = 'null', search, offs
         const params = {
             limit: 9,
             sortOrder: 'asc',
-            searchBy: 'title',
+            //searchBy: 'title',
             //search: search,
             //sortBy: sorter,
             filter: filter,

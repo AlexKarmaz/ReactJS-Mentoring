@@ -6,8 +6,9 @@ const initialState = {
   moviePreview: null,
   movieForEdit: null,
   totalMoviesCount: 0,
-  genres:['All'],
-  genreForFilter:'All'
+  genres: ['All'],
+  genreForFilter: 'All',
+  orderForSorting: 'title' 
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -47,6 +48,9 @@ const movieReducer = (state = initialState, action) => {
     }
     case MovieActionTypes.SET_GENRE_FOR_FILTER: {
       return { ...state, genreForFilter: action.payload };
+    }
+    case MovieActionTypes.SET_ORDER_FOR_SORTING: {
+      return { ...state, orderForSorting: action.payload };
     }
     default: {
       return state;

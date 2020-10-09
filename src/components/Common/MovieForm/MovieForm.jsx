@@ -4,7 +4,7 @@ import LabeledInput from '../LabeledInput';
 import LabeledMultiSelect from '../LabeledMultiSelect'
 import './MovieForm.css';
 
-const MovieForm = ({ onSubmit, movieData = {} }) => {
+const MovieForm = ({ onSubmit, movieData = {}, genres }) => {
     const initialMovieData = {
         id:  movieData.id || '',
         title: movieData.title || '',
@@ -15,12 +15,7 @@ const MovieForm = ({ onSubmit, movieData = {} }) => {
         runtime: movieData.runtime || 0,
     };
 
-    const defaultGenres = [
-        { label: 'Comedy', value: 'Comedy' },
-        { label: 'Documentary', value: 'Documentary' },
-        { label: 'Horror', value: 'Horror' },
-        { label: 'Crime', value: 'Crime' },
-    ];
+    const modifiedGenres = genres.map((genre) => ({label: genre, value: genre}));
 
     const [data, setData] = useState(initialMovieData);
 
@@ -72,7 +67,7 @@ const MovieForm = ({ onSubmit, movieData = {} }) => {
             />
             <LabeledMultiSelect
                 title="Genres"
-                options={defaultGenres}
+                options={modifiedGenres}
                 onChange={onGenreChange}
                 selected={data.genres}
                 overrideStrings={

@@ -102,4 +102,9 @@ export const updateGenres = () => ({
 export const setGenreForFilter = (payload) => ({
     type: movieActionsTypes.SET_GENRE_FOR_FILTER,
     payload,
-  });
+});
+
+export const setOrderForSorting = (payload) => ({
+    type: movieActionsTypes.SET_ORDER_FOR_SORTING,
+    payload,
+});

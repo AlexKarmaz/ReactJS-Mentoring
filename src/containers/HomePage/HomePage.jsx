@@ -24,18 +24,24 @@ const HomePage = ({
     setMovieForDeletion,
     setMoviePreview,
     movieForEdit,
-    setMovieForEdit
+    setMovieForEdit,
+    setOrderForSorting
 }) => {
     const sortingOptions = [
         {
-            id: '011',
-            title: 'Release date',
-            onClick: () => console.log('Release date'),
+            id: 'title001',
+            title: 'Title',
+            onClick: () => setOrderForSorting('title'),
         },
         {
-            id: '022',
-            title: 'Title',
-            onClick: () => console.log('Title'),
+            id: 'release_date002',
+            title: 'Release date',
+            onClick: () => setOrderForSorting('release_date'),
+        },
+        {
+            id: 'vote_average003',
+            title: 'Rating',
+            onClick: () => setOrderForSorting('vote_average'),
         },
     ];
 
@@ -52,7 +58,7 @@ const HomePage = ({
             <Main>
                 <Toolbar
                     leftToolbar={<Filter />}
-                    rightToolbar={<Sorting options={sortingOptions} />}
+                    rightToolbar={<Sorting options={sortingOptions}/>}
                 />
                 <MoviesCount />
                 <ErrorBoundary>
@@ -77,7 +83,17 @@ const HomePage = ({
 };
 
 const mapStateToProps = (state) => ({
-    filteredMovies: state.moviesData.genreForFilter == 'All' ? state.moviesData.movies : state.moviesData.movies.filter((movie) => movie.genres.includes(state.moviesData.genreForFilter)),
+    filteredMovies: state.moviesData.movies
+        .filter((movie) =>
+            state.moviesData.genreForFilter == 'All' ||
+            movie.genres.includes(state.moviesData.genreForFilter)
+        )
+        .sort((a, b) => {
+            if (a[state.moviesData.orderForSorting] > b[state.moviesData.orderForSorting]) {
+                return -1;
+            }
+            return 1;
+        }),
     loadedMoviesCount: state.moviesData.movies.length,
     addMovieDialog: state.commonData.addMovieDialog,
     movieForDeletion: state.moviesData.movieForDeletion,
@@ -88,7 +104,8 @@ const mapDispatchToProps = (dispatch) => ({
     loadMovies: () => dispatch(movieActions.loadMovies()),
     setMovieForDeletion: (movieId) => dispatch(movieActions.setMovieForDeletion(movieId)),
     setMoviePreview: (movie) => dispatch(movieActions.setMoviePreview(movie)),
-    setMovieForEdit: (movie) => dispatch(movieActions.setMovieForEdit(movie))
+    setMovieForEdit: (movie) => dispatch(movieActions.setMovieForEdit(movie)),
+    setOrderForSorting: (order) => dispatch(movieActions.setOrderForSorting(order)),
 });
   
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

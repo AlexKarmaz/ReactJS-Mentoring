@@ -8,3 +8,4 @@ export const EDIT_MOVIE = 'movie/editMovie';
 export const ADD_MOVIE = 'movie/addMovie';
 export const UPDATE_GENRES = 'genre/updateGenres';
 export const SET_GENRE_FOR_FILTER = 'movie/filterByGenre';
+export const SET_ORDER_FOR_SORTING = 'movie/sortByOrder';

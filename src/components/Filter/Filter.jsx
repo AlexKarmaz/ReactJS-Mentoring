@@ -7,21 +7,13 @@ import {movieActions} from '../../store/actions';
 import './Filter.css';
 
 const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
-    //const [activeGenre, setActiveGenre] = useState(genres[0]);
     const [isOpened, toggleIsOpened] = useToggle();
-
-    // const onGenreClick = useCallback((genre) => {
-    //     onFilterByGenre(genre);
-    //     //setActiveGenre(genre);
-    //   }, [onFilterByGenre]);
 
     const modifiedGenres = genres.map((genre) => {
         return {
             id: genre,
             title: genre,
             onClick: () => {
-                //onGenreClick(genre);
-               // setActiveGenre(genre);
                 setGenreForFilter(genre);
                 toggleIsOpened();
             },
