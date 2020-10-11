@@ -3,14 +3,14 @@ export const getMovies = async function ({ sorter, filter = 'null', search, offs
         const params = {
             limit: 9,
             sortOrder: 'asc',
-            //searchBy: 'title',
+            searchBy: 'title',
             //search: search,
             //sortBy: sorter,
-            filter: filter,
+            //filter: filter,
             offset: offset
         };
-        //const response = await fetch('http://localhost:4000/movies?' + new URLSearchParams(params));
-        const response = await fetch('http://localhost:4000/movies?sortOrder=asc&searchBy=title&offset=0&limit=9');
+        const response = await fetch('https://moviesapi-reactjs.herokuapp.com/movies?' + new URLSearchParams(params));
+        //const response = await fetch('https://moviesapi-reactjs.herokuapp.com/movies?sortOrder=asc&searchBy=title&offset=0&limit=9');
         const data = await response.json();
         return data;
     } catch (e) {
@@ -20,7 +20,7 @@ export const getMovies = async function ({ sorter, filter = 'null', search, offs
 
 export const deleteMovie = async function (id) {
     try {
-        const response = await fetch('http://localhost:4000/movies/' + id, {
+        const response = await fetch('https://moviesapi-reactjs.herokuapp.com/movies/' + id, {
             method: 'DELETE'
         });
         return response;
@@ -31,7 +31,7 @@ export const deleteMovie = async function (id) {
 
 export const editMovie = async function (movie) {
     try {
-        const response = await fetch('http://localhost:4000/movies', {
+        const response = await fetch('https://moviesapi-reactjs.herokuapp.com/movies', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ export const editMovie = async function (movie) {
 
 export const addMovie = async function (movie) {
     try {
-        const response = await fetch('http://localhost:4000/movies', {
+        const response = await fetch('https://moviesapi-reactjs.herokuapp.com/movies', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

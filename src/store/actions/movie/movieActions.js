@@ -5,9 +5,9 @@ import {commonActions} from '../../actions'
 export const loadMovies = () => async (dispatch, getState) => {
     const state = getState();
     const data = await movieService.getMovies({
-        filter: state.filter === 'All' ? '' : state.filter,
+        //filter: state.filter === 'All' ? '' : state.filter,
         //sorter: state.sorter.id,
-        search: state.search,
+        //search: state.search,
         //offset: newSearch ? 0 : (state.currentPage - 1) * 12
     });
 
