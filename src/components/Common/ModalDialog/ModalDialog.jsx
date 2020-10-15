@@ -1,9 +1,9 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import CloseButton from '../CloseButton';
 import './ModalDialog.css';
 
 const ModalDialog = ({dialogTitle, onDialogClose, children}) => {
-    const onClose = useCallback(() => onDialogClose(), [onDialogClose]);
+    //const onClose = useCallback(() => onDialogClose(), [onDialogClose]);
 
     useEffect (() => {
         document.body.style.overflow = 'hidden';
@@ -20,7 +20,7 @@ const ModalDialog = ({dialogTitle, onDialogClose, children}) => {
                 <div className='modalDialog-content'>
                     {children}
                 </div>
-                <CloseButton onClick={onClose} size='medium' />
+                <CloseButton onClick={onDialogClose} size='medium' />
             </div>
         </div>
     );

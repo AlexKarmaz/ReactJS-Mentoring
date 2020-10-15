@@ -1,23 +1,18 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import ModalDialog from '../Common/ModalDialog';
 import MovieForm from '../Common/MovieForm'
 import { connect } from 'react-redux'
 import {movieActions, commonActions} from '../../store/actions'
 
-const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => {
-    const onDialogClose = useCallback(() => onClose(), [onClose]);
-    const onSubmit = useCallback((data) => onConfirm(data), [onConfirm]);
-
-    return (
-        <ModalDialog dialogTitle='Edit movie' onDialogClose={onDialogClose}>
-            <MovieForm
-                onSubmit={onSubmit}
-                movieData={movieForEdit}
-                genres={genres}
-            />
-        </ModalDialog>
-    );
-};
+const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => (
+    <ModalDialog dialogTitle='Edit movie' onDialogClose={onClose}>
+        <MovieForm
+            onSubmit={onConfirm}
+            movieData={movieForEdit}
+            genres={genres}
+        />
+    </ModalDialog>
+);
 
 const mapStateToProps = (state) => ({
     movieForEdit: state.commonData.movieForEdit,

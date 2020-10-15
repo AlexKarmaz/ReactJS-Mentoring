@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import useToggle from '../../hooks/useToggle.jsx'
@@ -9,7 +9,7 @@ import './Filter.css';
 const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
     const [isOpened, toggleIsOpened] = useToggle();
 
-    const modifiedGenres = genres.map((genre) => {
+    const modifiedGenres = useCallback (genres.map((genre) => {
         return {
             id: genre,
             title: genre,
@@ -18,7 +18,7 @@ const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
                 toggleIsOpened();
             },
         };
-    });
+    }), [genres, setGenreForFilter, toggleIsOpened]);
 
     const genresList = (
         <ul className='filterList'>
