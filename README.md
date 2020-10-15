@@ -32,3 +32,10 @@ async actions and pass data to your components with redux.</p>
 <p>3. Implement creating, editing and updating films according to the design operations
 as redux actions.</p>
 <p>4. Implement filtering and sorting (by genre, rating, and release date) as redux actions.</p>
+
+<h2>Task 7 (Forms)</h2>
+<p>1. Install formik</p>
+<p>2. Implementation of “Add movie”
+form with validation</p>
+<p>3. Implementation of “Edit movie”
+form with validation</p>
