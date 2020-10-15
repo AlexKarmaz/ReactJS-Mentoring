@@ -4,7 +4,7 @@ import Menu from '../Common/Menu';
 import './Sorting.css';
 
 const Sorting = ({ options }) => {
-    //const [isOpened, setIsOpened] = useState(false);
+    //const [isOpened, setIsOpened] = useState(false);//alternative for useToggle
     const [isOpened, toggleIsOpened] = useToggle();
     const [selected, setSelected] = useState(options[0].title);
 

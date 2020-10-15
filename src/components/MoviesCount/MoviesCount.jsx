@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux'
 import './MoviesCount.css';
 
-const MoviesCount = (props) => (
+const MoviesCount = ({totalMoviesCount}) => (
     <div className='moviesCount'>
         <span>
-            <b>39</b> movies found
+            <b>{totalMoviesCount}</b> movies found
         </span>
     </div>
 );
 
-export default MoviesCount;
+const mapStateToProps = (state) => ({
+    totalMoviesCount: state.moviesData.totalMoviesCount
+});
+
+export default connect(mapStateToProps)(MoviesCount);

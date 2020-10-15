@@ -7,6 +7,11 @@
     color: #ffffff
 }
 
+.moviePreview .moviePoster {
+    height: 350px;
+    cursor: default;
+}
+
 .moviePreview .movieDetails {
     margin: 0 55px;
     font-weight: 300;
@@ -35,7 +40,7 @@
     margin-right: 20px;
 }
 
-.moviePreview .movieGenre {
+.moviePreview .movieTagline {
     margin-top: 5px;
 }
 

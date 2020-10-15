@@ -28,3 +28,69 @@
 .filterListItem:hover{
     border-bottom: 2px solid #f65251;
 }
+
+.filter {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 50px;
+}
+
+.filterLabel{
+    color: #999999;
+    margin-right: 30px;
+}
+
+.filterMenu{
+    color: #ffffff;
+}
+
+.caretButton {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 5px;
+}
+
+.caret-up{
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 7px solid transparent;
+    border-bottom-color: #F65261;
+}
+
+.caret-down{
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 7px solid transparent;
+    border-top-color: #F65261;
+}
+
+.filter > .menu {
+    align-self: start;
+    position: relative;
+    margin: 45px 0 0 0;
+    background-color: #424242;
+    right: 15;
+    padding: 20 20;
+    border-radius: 5px;
+}
+
+.filter > .menu > .menu-item{
+    font-size: 21px;
+    padding: 5 2;
+    width: 100%;
+}
+
+.filter > .menu > .menu-item:hover {
+    background-color: #F65261;
+}

@@ -4,7 +4,7 @@ import IconButton from '../Common/IconButton';
 import './MovieSettings.css';
 import threeDotsIcon from '../../../public/images/icon-threeDots-white.png';
 
-const MovieSettings = ({setingsMenuItems, onEdit, onDelete, isHovered}) => {
+const MovieSettings = ({onEdit, onDelete, isHovered}) => {
     const [isOpened, setIsOpened] = useState(false);
     
     useEffect (() => {
