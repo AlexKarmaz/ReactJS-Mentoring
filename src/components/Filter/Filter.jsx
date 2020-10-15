@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import useToggle from '../../hooks/useToggle.jsx'
 import Menu from '../Common/Menu';
-import {movieActions} from '../../store/actions';
+import {commonActions} from '../../store/actions';
 import './Filter.css';
 
 const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
@@ -58,11 +58,11 @@ const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
 const mapStateToProps = (state) => ({
     //genres: state.moviesData.genres.slice(0, 5),//to test genresList
     genres: state.moviesData.genres,
-    genreForFilter: state.moviesData.genreForFilter
+    genreForFilter: state.commonData.genreForFilter
 })
   
 const mapDispatchToProps = (dispatch) => ({
-    setGenreForFilter: (genre) => dispatch(movieActions.setGenreForFilter(genre))
+    setGenreForFilter: (genre) => dispatch(commonActions.setGenreForFilter(genre))
 })
 
 Filter.propTypes = {

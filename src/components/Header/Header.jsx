@@ -6,7 +6,7 @@ import IconButton from '../Common/IconButton'
 import MoviePreview from '../MoviePreview'
 import searhIcon from '../../../public/images/searchIcon-white.jpg';
 import { connect } from 'react-redux'
-import {commonActions, movieActions} from '../../store/actions'
+import {commonActions} from '../../store/actions'
 import './Header.css';
 
 const Header = ({onAddMovie, moviePreview=false, onBackToSearch}) => {
@@ -40,12 +40,12 @@ const Header = ({onAddMovie, moviePreview=false, onBackToSearch}) => {
 };
 
 const mapStateToProps = (state) => ({
-    moviePreview: state.moviesData.moviePreview,
+    moviePreview: state.commonData.moviePreview,
 })
   
 const mapDispatchToProps = (dispatch) => ({
     onAddMovie: () => dispatch(commonActions.openAddMovieDialog()),
-    onBackToSearch: () => dispatch(movieActions.setMoviePreview(null))
+    onBackToSearch: () => dispatch(commonActions.setMoviePreview(null))
 })
   
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

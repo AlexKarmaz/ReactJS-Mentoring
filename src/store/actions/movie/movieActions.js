@@ -27,9 +27,9 @@ export const setTotalMoviesCount  = (payload) => ({
 });
 
 export const deleteMovie = () => async (dispatch, getState) => {
-    const movieIdForDeletion = getState().moviesData.movieForDeletion;
+    const movieIdForDeletion = getState().commonData.movieForDeletion;
 
-    dispatch(closeDeleteMovieDialog());
+    dispatch(commonActions.closeDeleteMovieDialog());
 
     await movieService.deleteMovie(movieIdForDeletion);
 
@@ -41,39 +41,13 @@ export const deleteMovieFromStore = (payload) => ({
     payload,
 });
 
-export const setMovieForDeletion = (payload) => ({
-    type: movieActionsTypes.SET_MOVIE_FOR_DELETION,
-    payload,
-});
-
-export const closeDeleteMovieDialog = () => ({
-    type: movieActionsTypes.SET_MOVIE_FOR_DELETION,
-    payload: null,
-});
-
-export const setMoviePreview = (payload) => ({
-    type: movieActionsTypes.SET_MOVIE_PREVIEW,
-    payload,
-});
-
-
-export const setMovieForEdit = (payload) => ({
-    type: movieActionsTypes.SET_MOVIE_FOR_EDIT,
-    payload,
-});
-
-export const closeEditMovieDialog = () => ({
-    type: movieActionsTypes.SET_MOVIE_FOR_EDIT,
-    payload: null,
-});
-
 export const editMovieInStore = (payload) => ({
     type: movieActionsTypes.EDIT_MOVIE,
     payload,
 });
   
 export const editMovie = (movie) => async dispatch => {
-    dispatch(closeEditMovieDialog());
+    dispatch(commonActions.closeEditMovieDialog());
 
     const updatedMovie = await movieService.editMovie(movie);
 
@@ -97,14 +71,4 @@ export const addMovie = (movie) => async dispatch => {
 export const updateGenres = () => ({
     type: movieActionsTypes.UPDATE_GENRES,
     payload: null,
-});
-
-export const setGenreForFilter = (payload) => ({
-    type: movieActionsTypes.SET_GENRE_FOR_FILTER,
-    payload,
-});
-
-export const setOrderForSorting = (payload) => ({
-    type: movieActionsTypes.SET_ORDER_FOR_SORTING,
-    payload,
 });

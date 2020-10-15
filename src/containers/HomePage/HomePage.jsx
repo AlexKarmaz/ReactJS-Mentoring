@@ -13,7 +13,7 @@ import ErrorBoundary from '../../components/Common/ErrorBoundary';
 import DeleteMovieDialog from '../../components/DeleteMovieDialog';
 import EditMovieDialog from '../../components/EditMovieDialog';
 import AddMovieDialog from '../../components/AddMovieDialog';
-import {movieActions} from '../../store/actions'
+import {movieActions, commonActions} from '../../store/actions'
 
 const HomePage = ({
     filteredMovies,
@@ -85,27 +85,27 @@ const HomePage = ({
 const mapStateToProps = (state) => ({
     filteredMovies: state.moviesData.movies
         .filter((movie) =>
-            state.moviesData.genreForFilter == 'All' ||
-            movie.genres.includes(state.moviesData.genreForFilter)
+            state.commonData.genreForFilter == 'All' ||
+            movie.genres.includes(state.commonData.genreForFilter)
         )
         .sort((a, b) => {
-            if (a[state.moviesData.orderForSorting] > b[state.moviesData.orderForSorting]) {
+            if (a[state.commonData.orderForSorting] > b[state.commonData.orderForSorting]) {
                 return -1;
             }
             return 1;
         }),
     loadedMoviesCount: state.moviesData.movies.length,
     addMovieDialog: state.commonData.addMovieDialog,
-    movieForDeletion: state.moviesData.movieForDeletion,
-    movieForEdit: state.moviesData.movieForEdit,
+    movieForDeletion: state.commonData.movieForDeletion,
+    movieForEdit: state.commonData.movieForEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
     loadMovies: () => dispatch(movieActions.loadMovies()),
-    setMovieForDeletion: (movieId) => dispatch(movieActions.setMovieForDeletion(movieId)),
-    setMoviePreview: (movie) => dispatch(movieActions.setMoviePreview(movie)),
-    setMovieForEdit: (movie) => dispatch(movieActions.setMovieForEdit(movie)),
-    setOrderForSorting: (order) => dispatch(movieActions.setOrderForSorting(order)),
+    setMovieForDeletion: (movieId) => dispatch(commonActions.setMovieForDeletion(movieId)),
+    setMoviePreview: (movie) => dispatch(commonActions.setMoviePreview(movie)),
+    setMovieForEdit: (movie) => dispatch(commonActions.setMovieForEdit(movie)),
+    setOrderForSorting: (order) => dispatch(commonActions.setOrderForSorting(order)),
 });
   
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

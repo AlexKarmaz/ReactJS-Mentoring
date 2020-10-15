@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import ModalDialog from '../Common/ModalDialog';
 import MovieForm from '../Common/MovieForm'
 import { connect } from 'react-redux'
-import {movieActions} from '../../store/actions'
+import {movieActions, commonActions} from '../../store/actions'
 
 const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => {
     const onDialogClose = useCallback(() => onClose(), [onClose]);
@@ -20,12 +20,12 @@ const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => {
 };
 
 const mapStateToProps = (state) => ({
-    movieForEdit: state.moviesData.movieForEdit,
+    movieForEdit: state.commonData.movieForEdit,
     genres: state.moviesData.genres,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onClose: () => dispatch(movieActions.closeEditMovieDialog()),
+    onClose: () => dispatch(commonActions.closeEditMovieDialog()),
     onConfirm: (data) => dispatch(movieActions.editMovie(data))
 })
 
