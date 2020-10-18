@@ -39,3 +39,17 @@ as redux actions.</p>
 form with validation</p>
 <p>3. Implementation of “Edit movie”
 form with validation</p>
+
+<h2>Task 8 (Routing)</h2>
+<p>1. Create routing for your application (via React Router).</p>
+<p>2. Add 404 (error page) and ‘No movies found’ page.</p>
+<p>3. Link app states between each other with React Router.</p>
+<p>4. By default, user lands on a new page with empty results state.</p>
+<p>5. When user clicks on a film item, redirect them to:
+localhost/film/id </p>
+<p>6. Handle invalid URLs, display a 404 page, where user will be redirected in case of invalid URL.
+On switching search type or sorting type you shouldn’t switch any routes..</p>
+<p>7. When user performs a new search, you should redirect them to:
+localhost/search/Search%20Query</p>
+<p>8. When a new user lands on the page with such URL, you should perform search and display
+results.</p>
