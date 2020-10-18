@@ -6,6 +6,7 @@
   "main": "index.jsx",
   "dependencies": {
     "file-loader": "^6.0.0",
+    "formik": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-multi-select-component": "^3.0.2",
@@ -14,7 +15,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.7",
-    "url-loader": "^4.1.0"
+    "url-loader": "^4.1.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",

@@ -1,12 +1,12 @@
 import React from 'react';
 import ModalDialog from '../Common/ModalDialog';
-import MovieForm from '../Common/MovieForm'
+import MovieFormWithFormik from '../Common/MovieFormWithFormik'
 import { connect } from 'react-redux'
 import {commonActions, movieActions} from '../../store/actions'
 
 const AddMovieDialog = ({onClose, onConfirm, genres}) => (
     <ModalDialog dialogTitle='Add movie' onDialogClose={onClose}>
-        <MovieForm onSubmit={onConfirm} genres={genres}/>
+        <MovieFormWithFormik onSubmit={onConfirm} genres={genres}/>
     </ModalDialog>
 );
 
