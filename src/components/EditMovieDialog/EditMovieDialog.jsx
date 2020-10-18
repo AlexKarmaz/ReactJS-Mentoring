@@ -16,7 +16,7 @@ const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => (
 
 const mapStateToProps = (state) => ({
     movieForEdit: state.commonData.movieForEdit,
-    genres: state.moviesData.genres,
+    genres: state.moviesData.genres.filter((genre) => genre !== 'All'),
 });
 
 const mapDispatchToProps = (dispatch) => ({

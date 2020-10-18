@@ -11,7 +11,7 @@ const AddMovieDialog = ({onClose, onConfirm, genres}) => (
 );
 
 const mapStateToProps = (state) => ({
-    genres: state.moviesData.genres,
+    genres: state.moviesData.genres.filter((genre) => genre !== 'All'),
 })
 
 const mapDispatchToProps = (dispatch) => ({
