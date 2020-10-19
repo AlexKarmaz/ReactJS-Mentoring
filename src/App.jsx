@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from './store/store.js';
 import React from 'react';
-import HomePage from './containers/HomePage';
+import HomePage from './components/HomePage';
 import PageNotFound from './components/PageNotFound';
 import './App.css';
 
