@@ -2,13 +2,11 @@ import * as movieService from '../../../services/movieService.js';
 import * as movieActionsTypes from './movieActionTypes.js'
 import {commonActions} from '../../actions'
 
-export const loadMovies = () => async (dispatch, getState) => {
+export const loadMovies = (newSearch) => async (dispatch, getState) => {
     const state = getState();
     const data = await movieService.getMovies({
-        //filter: state.filter === 'All' ? '' : state.filter,
-        //sorter: state.sorter.id,
-        //search: state.search,
-        //offset: newSearch ? 0 : (state.currentPage - 1) * 12
+        search: state.commonData.searchString,
+        offset: newSearch ? 0 : 9
     });
 
     dispatch(setTotalMoviesCount(data.totalAmount));

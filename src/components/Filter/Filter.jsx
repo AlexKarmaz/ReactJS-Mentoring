@@ -43,7 +43,7 @@ const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
             <button className='caretButton' onClick={() => toggleIsOpened()}>
                 <span className={isOpened ? 'caret-up' : 'caret-down'}></span>
             </button>
-            {isOpened && <Menu menuItems={modifiedGenres} />}
+            {isOpened && <Menu menuItems={modifiedGenres} onBlur={toggleIsOpened}/>}
         </div>
     );
 

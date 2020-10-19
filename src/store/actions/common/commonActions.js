@@ -1,4 +1,5 @@
 import * as commonActionTypes from './commonActionTypes.js';
+import {movieActions} from '../../actions'
 
 export const openAddMovieDialog = () => ({
     type: commonActionTypes.ADD_MOVIE_DIALOG,
@@ -42,6 +43,16 @@ export const setGenreForFilter = (payload) => ({
 
 export const setOrderForSorting = (payload) => ({
     type: commonActionTypes.SET_ORDER_FOR_SORTING,
+    payload,
+});
+
+export const search = (searchString) => async dispatch => {
+    dispatch(setSearchString(searchString));
+    dispatch(movieActions.loadMovies(true));
+};
+
+export const setSearchString = (payload) => ({
+    type: commonActionTypes.SET_SEARCH_STRING,
     payload,
 });
   

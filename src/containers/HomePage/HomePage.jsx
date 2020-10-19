@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header';
 import Toolbar from '../../components/Toolbar';
@@ -14,11 +14,10 @@ import DeleteMovieDialog from '../../components/DeleteMovieDialog';
 import EditMovieDialog from '../../components/EditMovieDialog';
 import AddMovieDialog from '../../components/AddMovieDialog';
 import NoFoundMovies from '../../components/NoFoundMovies'
-import {movieActions, commonActions} from '../../store/actions'
+import {commonActions} from '../../store/actions'
 
 const HomePage = ({
     filteredMovies,
-    loadMovies,
     addMovieDialog,
     movieForDeletion,
     setMovieForDeletion,
@@ -49,8 +48,6 @@ const HomePage = ({
         setMoviePreview(movie);
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
-
-    //useEffect(() => {loadMovies()}, [loadMovies], []);
 
     return (
         <>
@@ -103,7 +100,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    loadMovies: () => dispatch(movieActions.loadMovies()),
     setMovieForDeletion: (movieId) => dispatch(commonActions.setMovieForDeletion(movieId)),
     setMoviePreview: (movie) => dispatch(commonActions.setMoviePreview(movie)),
     setMovieForEdit: (movie) => dispatch(commonActions.setMovieForEdit(movie)),

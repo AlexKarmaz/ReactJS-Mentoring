@@ -6,7 +6,8 @@ const initialState = {
   moviePreview: null,
   movieForEdit: null,
   genreForFilter: 'All',
-  orderForSorting: 'title'
+  orderForSorting: 'title',
+  searchString: ''
 };
 
 const commonReducer = (state = initialState, action) => {
@@ -28,6 +29,9 @@ const commonReducer = (state = initialState, action) => {
     }
     case commonActionTypes.SET_ORDER_FOR_SORTING: {
       return { ...state, orderForSorting: action.payload };
+    }
+    case commonActionTypes.SET_SEARCH_STRING: {
+      return { ...state, searchString: action.payload };
     }
     default: {
       return state;

@@ -11,7 +11,8 @@ module.exports = merge(common, {
     port: 3000,
     hotOnly: true,
     compress: true,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   devtool: "inline-source-map",
   optimization: {

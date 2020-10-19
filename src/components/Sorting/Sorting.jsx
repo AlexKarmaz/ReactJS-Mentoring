@@ -28,7 +28,7 @@ const Sorting = ({ options }) => {
             <button className='caretButton' onClick={() => /*setIsOpened(!isOpened)*/ toggleIsOpened()}>
                 <span className={isOpened ? 'caret-up' : 'caret-down'}></span>
             </button>
-            {isOpened && <Menu menuItems={modifiedOptions} />}
+            {isOpened && <Menu menuItems={modifiedOptions} onBlur={toggleIsOpened} />}
         </div>
     );
 };
