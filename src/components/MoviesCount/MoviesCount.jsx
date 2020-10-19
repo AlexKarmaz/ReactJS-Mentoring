@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 import './MoviesCount.css';
 
 const MoviesCount = ({totalMoviesCount}) => (
-    <div className='moviesCount'>
-        <span>
-            <b>{totalMoviesCount}</b> movies found
-        </span>
-    </div>
+    <>
+        {totalMoviesCount > 0 && (   
+            <div className='moviesCount'>
+                <span>
+                    <b>{totalMoviesCount}</b> movies found
+                </span>
+            </div>
+        )}
+    </>
 );
 
 const mapStateToProps = (state) => ({

@@ -13,6 +13,7 @@ import ErrorBoundary from '../../components/Common/ErrorBoundary';
 import DeleteMovieDialog from '../../components/DeleteMovieDialog';
 import EditMovieDialog from '../../components/EditMovieDialog';
 import AddMovieDialog from '../../components/AddMovieDialog';
+import NoFoundMovies from '../../components/NoFoundMovies'
 import {movieActions, commonActions} from '../../store/actions'
 
 const HomePage = ({
@@ -49,7 +50,7 @@ const HomePage = ({
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
 
-    useEffect(() => {loadMovies()}, [loadMovies], []);
+    //useEffect(() => {loadMovies()}, [loadMovies], []);
 
     return (
         <>
@@ -68,6 +69,9 @@ const HomePage = ({
                             onMovieDelete={setMovieForDeletion}
                             onMovieClick={onMovieClick}
                         />
+                    )}
+                    {filteredMovies.length === 0 && (
+                        <NoFoundMovies/>
                     )}
                 </ErrorBoundary>
             </Main>
