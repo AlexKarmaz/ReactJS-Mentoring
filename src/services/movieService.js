@@ -1,11 +1,12 @@
-export const getMovies = async function ({ search='', offset = 0}) {
+export const getMovies = async function ({ search='', offset = 0, genre}) {
     try {
         const params = {
             limit: 9,
             sortOrder: 'asc',
             searchBy: 'title',
             search: search,
-            offset: offset
+            offset: offset,
+            filter: genre
         };
         debugger;
         const response = await fetch('https://moviesapi-reactjs.herokuapp.com/movies?' + new URLSearchParams(params));

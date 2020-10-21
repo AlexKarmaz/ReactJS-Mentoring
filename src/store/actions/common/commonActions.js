@@ -47,7 +47,9 @@ export const setOrderForSorting = (payload) => ({
 });
 
 export const search = (searchString) => async dispatch => {
+    dispatch(movieActions.resetMovieResults());
     dispatch(setSearchString(searchString));
+    dispatch(setGenreForFilter('All'));
     dispatch(movieActions.loadMovies(true));
 };
 

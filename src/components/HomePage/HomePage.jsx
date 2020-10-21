@@ -13,8 +13,9 @@ import ErrorBoundary from '../Common/ErrorBoundary';
 import DeleteMovieDialog from '../DeleteMovieDialog';
 import EditMovieDialog from '../EditMovieDialog';
 import AddMovieDialog from '../AddMovieDialog';
-import NoFoundMovies from '../NoFoundMovies'
-import {commonActions} from '../../store/actions'
+import NoFoundMovies from '../NoFoundMovies';
+import MoviesLoader from '../MoviesLoader';
+import {commonActions} from '../../store/actions';
 
 const HomePage = ({
     filteredMovies,
@@ -60,12 +61,15 @@ const HomePage = ({
                 <MoviesCount />
                 <ErrorBoundary>
                     {filteredMovies.length > 0 && (
-                        <MovieList
-                            movieList={filteredMovies}
-                            onMovieEdit={setMovieForEdit}
-                            onMovieDelete={setMovieForDeletion}
-                            onMovieClick={onMovieClick}
-                        />
+                        <>
+                            <MovieList
+                                movieList={filteredMovies}
+                                onMovieEdit={setMovieForEdit}
+                                onMovieDelete={setMovieForDeletion}
+                                onMovieClick={onMovieClick}
+                            />
+                            <MoviesLoader/>
+                        </>
                     )}
                     {filteredMovies.length === 0 && (
                         <NoFoundMovies/>

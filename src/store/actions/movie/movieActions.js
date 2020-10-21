@@ -6,16 +6,24 @@ export const loadMovies = (newSearch) => async (dispatch, getState) => {
     const state = getState();
     const data = await movieService.getMovies({
         search: state.commonData.searchString,
-        offset: newSearch ? 0 : 9
+        offset: state.moviesData.offset,
+        genre: state.commonData.genreForFilter !== 'All' ? state.commonData.genreForFilter : ''
     });
 
-    dispatch(setTotalMoviesCount(data.totalAmount));
-    dispatch(moviesLoaded(data.data));
+    dispatch(addMovies(data));
+
+    if(newSearch) dispatch(setTotalMoviesCount(data.totalAmount));
+
     dispatch(updateGenres());
 };
 
-export const moviesLoaded = (payload) => ({
-    type: movieActionsTypes.MOVIES_LOADED,
+export const resetMovieResults = () => ({
+    type: movieActionsTypes.RESET_MOVIE_RESULTS,
+    payload: null,
+  });
+
+export const addMovies = (payload) => ({
+    type: movieActionsTypes.ADD_MOVIES,
     payload,
 });
 
