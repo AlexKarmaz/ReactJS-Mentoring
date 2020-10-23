@@ -1,10 +1,12 @@
 import React, { useCallback, useState, useMemo, useEffect } from 'react';
+import StyledButton from '../Common/StyledButton';
+import Logo from '../Logo';
 import { connect } from 'react-redux';
 import {commonActions} from '../../store/actions';
 import { useHistory, useParams, useLocation } from 'react-router';
 import './Search.css';
 
-const Search = ({onSearch}) => {
+const Search = ({onSearch, onAddMovie}) => {
     const history = useHistory();
     const location = useLocation();
     const { searchQuery } = useParams();
@@ -39,25 +41,37 @@ const Search = ({onSearch}) => {
     );
 
     return (
-        <div className='searchWrapper'>
-            <h1 className='searchTitle'>Find your movie</h1>
-            <div className='search'>
-                <input
-                    className='searchInput'
-                    type='text'
-                    placeholder='What do you want to watch?'
-                    value={searchStr}
-                    onChange={onChange}
-                    onKeyDown={handleKeyDown}
+        <>
+            <div className='headerWrapper'>
+                <Logo />
+                <StyledButton
+                    text='+ Add movie'
+                    size='medium'
+                    type='action'
+                    onClick={onAddMovie}
                 />
-                <button className='searchButton' onClick={onSearchHandler}>Search</button>
             </div>
-        </div>
+            <div className='searchWrapper'>
+                <h1 className='searchTitle'>Find your movie</h1>
+                <div className='search'>
+                    <input
+                        className='searchInput'
+                        type='text'
+                        placeholder='What do you want to watch?'
+                        value={searchStr}
+                        onChange={onChange}
+                        onKeyDown={handleKeyDown}
+                    />
+                    <button className='searchButton' onClick={onSearchHandler}>Search</button>
+                </div>
+            </div>
+        </>
     )
 };
  
 const mapDispatchToProps = (dispatch) => ({
-    onSearch: (searchString) => dispatch(commonActions.search(searchString))
+    onSearch: (searchString) => dispatch(commonActions.search(searchString)),
+    onAddMovie: () => dispatch(commonActions.openAddMovieDialog()),
 })
   
 export default connect(null, mapDispatchToProps)(Search);

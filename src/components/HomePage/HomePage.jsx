@@ -23,7 +23,6 @@ const HomePage = ({
     addMovieDialog,
     movieForDeletion,
     setMovieForDeletion,
-    setMoviePreview,
     movieForEdit,
     setMovieForEdit,
     setOrderForSorting
@@ -54,7 +53,6 @@ const HomePage = ({
     }, [pathname]);
 
     const onMovieClick = useCallback((movie) => {
-        setMoviePreview(movie);
         history.push(`/films/${movie.id}`);
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, [history]);
@@ -114,7 +112,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     setMovieForDeletion: (movieId) => dispatch(commonActions.setMovieForDeletion(movieId)),
-    setMoviePreview: (movie) => dispatch(commonActions.setMoviePreview(movie)),
     setMovieForEdit: (movie) => dispatch(commonActions.setMovieForEdit(movie)),
     setOrderForSorting: (order) => dispatch(commonActions.setOrderForSorting(order)),
 });

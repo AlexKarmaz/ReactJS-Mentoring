@@ -21,11 +21,6 @@ export const closeDeleteMovieDialog = () => ({
     payload: null,
 });
 
-export const setMoviePreview = (payload) => ({
-    type: commonActionTypes.SET_MOVIE_PREVIEW,
-    payload,
-});
-
 export const setMovieForEdit = (payload) => ({
     type: commonActionTypes.SET_MOVIE_FOR_EDIT,
     payload,
