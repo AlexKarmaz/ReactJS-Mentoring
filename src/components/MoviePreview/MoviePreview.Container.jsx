@@ -1,19 +1,23 @@
-import React, { useEffect, useMemo, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { useParams, useHistory } from 'react-router';
 import MoviePreview from './MoviePreview';
-import { movieActions } from '../../store/actions';
+import { movieActions, commonActions } from '../../store/actions';
 
-const MoviePreviewContainer = ({loadMovieById, searchString}) => {
+const MoviePreviewContainer = ({loadMovieById, searchString, updateMovies, setSearchString}) => {
   const { id } = useParams();
   const history = useHistory();
-  const movie = useMemo(() => loadMovieById(id), [id]);
-//   useEffect(() => {
-//     if (!movie) {
-//         alert('There is no movie with such id:' + id);
-//         history.goBack();
-//     }
-//   }, [movie, id]);
+  let movie = loadMovieById(id);
+
+  useEffect(() => {
+    if (!movie && history.location.state) {
+      updateMovies({data:history.location.state.filteredMovies, offset:history.location.state.offset});
+      setSearchString(history.location.state.searchString);
+    } else if(!movie && !history.location.state){
+      alert('There is no movie with such id:' + id);
+      history.goBack();
+    }
+  }, [movie, loadMovieById, id, updateMovies, setSearchString, history]);
 
   const onBackToSearch = useCallback(() => history.push(`/search/${searchString}`),
     [history, searchString]
@@ -28,6 +32,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     loadMovieById: (id) => dispatch(movieActions.getMovieById(id)),
+    updateMovies: (movies) => dispatch(movieActions.addMovies(movies)),
+    setSearchString: (searchStr) => dispatch(commonActions.setSearchString(searchStr))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePreviewContainer);

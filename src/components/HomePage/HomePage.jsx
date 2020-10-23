@@ -25,7 +25,9 @@ const HomePage = ({
     setMovieForDeletion,
     movieForEdit,
     setMovieForEdit,
-    setOrderForSorting
+    setOrderForSorting,
+    offset,
+    searchString
 }) => {
     const sortingOptions = [
         {
@@ -53,9 +55,9 @@ const HomePage = ({
     }, [pathname]);
 
     const onMovieClick = useCallback((movie) => {
-        history.push(`/films/${movie.id}`);
+        history.push(`/films/${movie.id}`, {filteredMovies: filteredMovies, offset:offset, searchString:searchString });
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, [history]);
+    }, [history, filteredMovies, offset, searchString]);
 
     return (
         <>
@@ -108,6 +110,8 @@ const mapStateToProps = (state) => ({
     addMovieDialog: state.commonData.addMovieDialog,
     movieForDeletion: state.commonData.movieForDeletion,
     movieForEdit: state.commonData.movieForEdit,
+    offset: state.moviesData.offset,
+    searchString: state.commonData.searchString
 });
 
 const mapDispatchToProps = (dispatch) => ({

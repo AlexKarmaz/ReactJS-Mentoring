@@ -81,6 +81,10 @@ export const updateGenres = () => ({
 
 export const getMovieById = (id) => (dispatch, getState) => {
     const state = getState();
+
+    // if( state.moviesData.movies.length == 0) {
+    //     dispatch(loadMovies(false));
+    // }
     const movie = state.moviesData.movies.find((movie) => movie.id == id);
 
     return movie; 

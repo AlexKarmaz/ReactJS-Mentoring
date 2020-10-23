@@ -7,20 +7,10 @@ import * as Yup from 'yup';
 import './MovieFormWithFormik.css';
 
 const MovieFormWithFormik = ({ onSubmit, movieData = {}, genres }) => {
-    const initialMovieData = {
-        id:  movieData.id || '',
-        title: movieData.title || '',
-        release_date: movieData.release_date || '',
-        poster_path: movieData.poster_path || '',
-        genres: movieData.genres || [],
-        overview: movieData.overview || '',
-        runtime: movieData.runtime || 0,
-    };
-
     const onFormSubmit = useCallback((data) => onSubmit(data), [onSubmit]);
 
     const formik = useFormik({
-        initialValues: initialMovieData,
+        initialValues: movieData,
         validationSchema: Yup.object({
           title: Yup.string().required('Title is required'),
           release_date: Yup.string()
