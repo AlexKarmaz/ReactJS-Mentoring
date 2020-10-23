@@ -13,10 +13,10 @@ class App extends React.Component {
             <Provider store={store}>
                 <Router>
                     <Switch>
-                        <Route exact path='/' component={HomePage} />
-                        <Route path='*'>
+                        <Route exact path='/404'>
                             <PageNotFound/>
                         </Route>    
+                        <Route path='/' component={HomePage} />
                     </Switch>
                 </Router>
             </Provider>

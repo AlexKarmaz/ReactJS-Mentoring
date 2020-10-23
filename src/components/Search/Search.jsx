@@ -1,15 +1,31 @@
-import React, { useCallback, useState } from 'react';
-import { connect } from 'react-redux'
-import {commonActions} from '../../store/actions'
+import React, { useCallback, useState, useMemo, useEffect } from 'react';
+import { connect } from 'react-redux';
+import {commonActions} from '../../store/actions';
+import { useHistory, useParams, useLocation } from 'react-router';
 import './Search.css';
 
 const Search = ({onSearch}) => {
-    const [searchStr, setSearchStr] = useState('');
+    const history = useHistory();
+    const location = useLocation();
+    const { searchQuery } = useParams();
 
-    const onSearchHandler = useCallback(() => onSearch(searchStr), [
-        onSearch,
-        searchStr
-    ]);
+    const initialSearchStr = useMemo(() => {    
+        return searchQuery ? searchQuery : '';
+    }, [searchQuery]);
+
+    useEffect(() => {
+        const searchString = searchQuery ? searchQuery : '';
+
+        if (location.pathname !== '/'){
+            onSearch(searchString);
+        }
+    },[onSearch, searchQuery, location]);
+
+    const [searchStr, setSearchStr] = useState(initialSearchStr);
+
+    const onSearchHandler = useCallback(() => {
+        history.push(`/search/${searchStr}`);
+    }, [searchStr]);
 
     const onChange = useCallback((e) => setSearchStr(e.target.value), []);
     
@@ -30,6 +46,7 @@ const Search = ({onSearch}) => {
                     className='searchInput'
                     type='text'
                     placeholder='What do you want to watch?'
+                    value={searchStr}
                     onChange={onChange}
                     onKeyDown={handleKeyDown}
                 />

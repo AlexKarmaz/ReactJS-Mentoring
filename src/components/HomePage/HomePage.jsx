@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header';
 import Toolbar from '../Toolbar';
@@ -16,6 +16,7 @@ import AddMovieDialog from '../AddMovieDialog';
 import NoFoundMovies from '../NoFoundMovies';
 import MoviesLoader from '../MoviesLoader';
 import {commonActions} from '../../store/actions';
+import { useHistory, useLocation } from 'react-router';
 
 const HomePage = ({
     filteredMovies,
@@ -45,10 +46,18 @@ const HomePage = ({
         },
     ];
 
-    const onMovieClick = (movie) => {
+    const history = useHistory();
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    const onMovieClick = useCallback((movie) => {
         setMoviePreview(movie);
+        history.push(`/films/${movie.id}`);
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    };
+    }, [history]);
 
     return (
         <>

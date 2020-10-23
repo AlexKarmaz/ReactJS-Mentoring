@@ -78,3 +78,10 @@ export const updateGenres = () => ({
     type: movieActionsTypes.UPDATE_GENRES,
     payload: null,
 });
+
+export const getMovieById = (id) => (dispatch, getState) => {
+    const state = getState();
+    const movie = state.moviesData.movies.find((movie) => movie.id == id);
+
+    return movie; 
+};
