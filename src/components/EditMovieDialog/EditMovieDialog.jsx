@@ -1,12 +1,12 @@
 import React from 'react';
 import ModalDialog from '../Common/ModalDialog';
-import MovieForm from '../Common/MovieForm'
+import MovieFormWithFormik from '../Common/MovieFormWithFormik'
 import { connect } from 'react-redux'
 import {movieActions, commonActions} from '../../store/actions'
 
 const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => (
     <ModalDialog dialogTitle='Edit movie' onDialogClose={onClose}>
-        <MovieForm
+        <MovieFormWithFormik
             onSubmit={onConfirm}
             movieData={movieForEdit}
             genres={genres}
@@ -16,7 +16,7 @@ const EditMovieDialog = ({onClose, movieForEdit, onConfirm, genres}) => (
 
 const mapStateToProps = (state) => ({
     movieForEdit: state.commonData.movieForEdit,
-    genres: state.moviesData.genres,
+    genres: state.moviesData.genres.filter((genre) => genre !== 'All'),
 });
 
 const mapDispatchToProps = (dispatch) => ({

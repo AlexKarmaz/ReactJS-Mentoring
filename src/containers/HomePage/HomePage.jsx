@@ -17,7 +17,6 @@ import {movieActions, commonActions} from '../../store/actions'
 
 const HomePage = ({
     filteredMovies,
-    loadedMoviesCount,
     loadMovies,
     addMovieDialog,
     movieForDeletion,
@@ -62,7 +61,7 @@ const HomePage = ({
                 />
                 <MoviesCount />
                 <ErrorBoundary>
-                    {loadedMoviesCount > 0 && (
+                    {filteredMovies.length > 0 && (
                         <MovieList
                             movieList={filteredMovies}
                             onMovieEdit={setMovieForEdit}
@@ -94,7 +93,6 @@ const mapStateToProps = (state) => ({
             }
             return 1;
         }),
-    loadedMoviesCount: state.moviesData.movies.length,
     addMovieDialog: state.commonData.addMovieDialog,
     movieForDeletion: state.commonData.movieForDeletion,
     movieForEdit: state.commonData.movieForEdit,
