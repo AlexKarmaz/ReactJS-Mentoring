@@ -53,3 +53,12 @@ On switching search type or sorting type you shouldn’t switch any routes..</p>
 localhost/search/Search%20Query</p>
 <p>8. When a new user lands on the page with such URL, you should perform search and display
 results.</p>
+
+<h2>Task 9 (Testing)</h2>
+<p>Write unit tests for your application (consider using Jest, @testing-library/react
+or Enzyme, react-test-renderer, React-test-utils, etc.):</p>
+<p>1. Cover 1 simple presentational component with snapshot tests.</p>
+<p>2. Cover 1 reducer and all its actions with unit-tests.</p>
+<p>3. Measure coverage level with coverage report.</p>
+<p>4. Cover “Add movie” modal dialog components with unit-tests, mock all external
+dependencies using Jest mocks </p>
