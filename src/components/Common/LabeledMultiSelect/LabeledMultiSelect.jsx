@@ -5,7 +5,7 @@ const LabeledMultiSelect = ({
     title,
     options,
     onChange,
-    selected,
+    selected=[],
     overrideStrings,
     validationError = '',
 }) => {

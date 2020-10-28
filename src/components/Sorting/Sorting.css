@@ -26,6 +26,7 @@
     background-color: transparent;
     border-color: transparent;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 .caret-up{
@@ -46,7 +47,7 @@
 
 .sorting > .menu {
     position: absolute;
-    margin: 155px 0 0 0;
+    margin: 185px 0 0 0;
     background-color: #424242;
     right: 50;
     padding: 20 20;

@@ -1,4 +1,5 @@
 import * as commonActionTypes from './commonActionTypes.js';
+import {movieActions} from '../../actions'
 
 export const openAddMovieDialog = () => ({
     type: commonActionTypes.ADD_MOVIE_DIALOG,
@@ -20,11 +21,6 @@ export const closeDeleteMovieDialog = () => ({
     payload: null,
 });
 
-export const setMoviePreview = (payload) => ({
-    type: commonActionTypes.SET_MOVIE_PREVIEW,
-    payload,
-});
-
 export const setMovieForEdit = (payload) => ({
     type: commonActionTypes.SET_MOVIE_FOR_EDIT,
     payload,
@@ -42,6 +38,18 @@ export const setGenreForFilter = (payload) => ({
 
 export const setOrderForSorting = (payload) => ({
     type: commonActionTypes.SET_ORDER_FOR_SORTING,
+    payload,
+});
+
+export const search = (searchString) => async dispatch => {
+    dispatch(movieActions.resetMovieResults());
+    dispatch(setSearchString(searchString));
+    dispatch(setGenreForFilter('All'));
+    dispatch(movieActions.loadMovies(true));
+};
+
+export const setSearchString = (payload) => ({
+    type: commonActionTypes.SET_SEARCH_STRING,
     payload,
 });
   

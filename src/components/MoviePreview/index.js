@@ -1,3 +1,3 @@
-import MoviePreview from './MoviePreview';
+import MoviePreview from './MoviePreview.Container';
 
 export default MoviePreview;

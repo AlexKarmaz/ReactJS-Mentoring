@@ -1,0 +1,17 @@
+.pageNotFound {
+
+    background-color:rgba(18,18,18,1);
+    padding: 0 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageNotFound-title {
+    font-size: 50px;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: 100;
+}

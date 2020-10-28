@@ -2,22 +2,28 @@ import * as movieService from '../../../services/movieService.js';
 import * as movieActionsTypes from './movieActionTypes.js'
 import {commonActions} from '../../actions'
 
-export const loadMovies = () => async (dispatch, getState) => {
+export const loadMovies = (newSearch) => async (dispatch, getState) => {
     const state = getState();
     const data = await movieService.getMovies({
-        //filter: state.filter === 'All' ? '' : state.filter,
-        //sorter: state.sorter.id,
-        //search: state.search,
-        //offset: newSearch ? 0 : (state.currentPage - 1) * 12
+        search: state.commonData.searchString,
+        offset: state.moviesData.offset,
+        genre: state.commonData.genreForFilter !== 'All' ? state.commonData.genreForFilter : ''
     });
 
-    dispatch(setTotalMoviesCount(data.totalAmount));
-    dispatch(moviesLoaded(data.data));
+    dispatch(addMovies(data));
+
+    if(newSearch) dispatch(setTotalMoviesCount(data.totalAmount));
+
     dispatch(updateGenres());
 };
 
-export const moviesLoaded = (payload) => ({
-    type: movieActionsTypes.MOVIES_LOADED,
+export const resetMovieResults = () => ({
+    type: movieActionsTypes.RESET_MOVIE_RESULTS,
+    payload: null,
+  });
+
+export const addMovies = (payload) => ({
+    type: movieActionsTypes.ADD_MOVIES,
     payload,
 });
 
@@ -72,3 +78,14 @@ export const updateGenres = () => ({
     type: movieActionsTypes.UPDATE_GENRES,
     payload: null,
 });
+
+export const getMovieById = (id) => (dispatch, getState) => {
+    const state = getState();
+
+    // if( state.moviesData.movies.length == 0) {
+    //     dispatch(loadMovies(false));
+    // }
+    const movie = state.moviesData.movies.find((movie) => movie.id == id);
+
+    return movie; 
+};

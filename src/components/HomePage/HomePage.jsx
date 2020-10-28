@@ -1,30 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
-import Header from '../../components/Header';
-import Toolbar from '../../components/Toolbar';
-import Main from '../../components/Main';
-import MovieList from '../../components/MovieList';
-import MoviesCount from '../../components/MoviesCount';
-import Filter from '../../components/Filter';
-import Footer from '../../components/Footer';
-import Logo from '../../components/Logo';
-import Sorting from '../../components/Sorting';
-import ErrorBoundary from '../../components/Common/ErrorBoundary';
-import DeleteMovieDialog from '../../components/DeleteMovieDialog';
-import EditMovieDialog from '../../components/EditMovieDialog';
-import AddMovieDialog from '../../components/AddMovieDialog';
-import {movieActions, commonActions} from '../../store/actions'
+import Header from '../Header';
+import Toolbar from '../Toolbar';
+import Main from '../Main';
+import MovieList from '../MovieList';
+import MoviesCount from '../MoviesCount';
+import Filter from '../Filter';
+import Footer from '../Footer';
+import Logo from '../Logo';
+import Sorting from '../Sorting';
+import ErrorBoundary from '../Common/ErrorBoundary';
+import DeleteMovieDialog from '../DeleteMovieDialog';
+import EditMovieDialog from '../EditMovieDialog';
+import AddMovieDialog from '../AddMovieDialog';
+import NoFoundMovies from '../NoFoundMovies';
+import MoviesLoader from '../MoviesLoader';
+import {commonActions} from '../../store/actions';
+import { useHistory, useLocation } from 'react-router';
 
 const HomePage = ({
     filteredMovies,
-    loadMovies,
     addMovieDialog,
     movieForDeletion,
     setMovieForDeletion,
-    setMoviePreview,
     movieForEdit,
     setMovieForEdit,
-    setOrderForSorting
+    setOrderForSorting,
+    offset,
+    searchString
 }) => {
     const sortingOptions = [
         {
@@ -44,12 +47,17 @@ const HomePage = ({
         },
     ];
 
-    const onMovieClick = (movie) => {
-        setMoviePreview(movie);
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    };
+    const history = useHistory();
+    const { pathname } = useLocation();
 
-    useEffect(() => {loadMovies()}, [loadMovies], []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    const onMovieClick = useCallback((movie) => {
+        history.push(`/films/${movie.id}`, {filteredMovies: filteredMovies, offset:offset, searchString:searchString });
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, [history, filteredMovies, offset, searchString]);
 
     return (
         <>
@@ -62,12 +70,18 @@ const HomePage = ({
                 <MoviesCount />
                 <ErrorBoundary>
                     {filteredMovies.length > 0 && (
-                        <MovieList
-                            movieList={filteredMovies}
-                            onMovieEdit={setMovieForEdit}
-                            onMovieDelete={setMovieForDeletion}
-                            onMovieClick={onMovieClick}
-                        />
+                        <>
+                            <MovieList
+                                movieList={filteredMovies}
+                                onMovieEdit={setMovieForEdit}
+                                onMovieDelete={setMovieForDeletion}
+                                onMovieClick={onMovieClick}
+                            />
+                            <MoviesLoader/>
+                        </>
+                    )}
+                    {filteredMovies.length === 0 && (
+                        <NoFoundMovies/>
                     )}
                 </ErrorBoundary>
             </Main>
@@ -96,12 +110,12 @@ const mapStateToProps = (state) => ({
     addMovieDialog: state.commonData.addMovieDialog,
     movieForDeletion: state.commonData.movieForDeletion,
     movieForEdit: state.commonData.movieForEdit,
+    offset: state.moviesData.offset,
+    searchString: state.commonData.searchString
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    loadMovies: () => dispatch(movieActions.loadMovies()),
     setMovieForDeletion: (movieId) => dispatch(commonActions.setMovieForDeletion(movieId)),
-    setMoviePreview: (movie) => dispatch(commonActions.setMoviePreview(movie)),
     setMovieForEdit: (movie) => dispatch(commonActions.setMovieForEdit(movie)),
     setOrderForSorting: (order) => dispatch(commonActions.setOrderForSorting(order)),
 });
