@@ -1,12 +1,24 @@
 {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "**/src/**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/coverage/**",
+        "!**/src/components/**/index.js",
+        "!**/src/store/**/index.js",
+        "!**/src/_tests_/**"
+    ],
     "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest"
+        "^.+\\.(js|jsx)$": "babel-jest"
     },
     "moduleNameMapper": {
-        "\\.(css|scss)$": "<rootDir>/src/__tests__/__mocks__/styleMock.js"
+        "\\.(css|scss)$": "<rootDir>/src/__tests__/__mocks__/styleMock.js",
+        "\\.(png|svg)$": "<rootDir>/src/__tests__/__mocks__/styleMock.js"
     },
+    "setupFilesAfterEnv": ["<rootDir>/src/__tests__/configs/enzyme.config.js"],
     "testPathIgnorePatterns": [
-        "/node_modules/", "<rootDir>/src/__tests__/__mocks__/"
+        "<rootDir>//node_modules/",
+        "<rootDir>/src/__tests__/__mocks__/",
+        "<rootDir>/src/__tests__/configs/"
     ]
 }
-  

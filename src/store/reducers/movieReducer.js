@@ -29,7 +29,7 @@ const movieReducer = (state = initialState, action) => {
     }
     case movieActionTypes.ADD_MOVIE: {
       const newMovie = action.payload;
-      return { ...state, movies: [...state.movies, newMovie] };
+      return { ...state, movies: [...state.movies, newMovie],  offset: state.offset + 1 };
     }
     case movieActionTypes.UPDATE_GENRES: {
       const newGenres = new Set(state.movies.map((movie) => movie.genres).flat());
