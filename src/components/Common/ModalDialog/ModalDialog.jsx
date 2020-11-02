@@ -3,8 +3,6 @@ import CloseButton from '../CloseButton';
 import './ModalDialog.css';
 
 const ModalDialog = ({dialogTitle, onDialogClose, children}) => {
-    //const onClose = useCallback(() => onDialogClose(), [onDialogClose]);
-
     useEffect (() => {
         document.body.style.overflow = 'hidden';
 

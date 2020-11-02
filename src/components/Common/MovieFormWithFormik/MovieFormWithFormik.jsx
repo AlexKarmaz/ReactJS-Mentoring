@@ -43,7 +43,7 @@ const MovieFormWithFormik = ({ onSubmit, movieData = {}, genres }) => {
     );
 
     return (
-        <form className='movieForm'>
+        <form className='movieForm' onSubmit={formik.handleSubmit}>
             {formik.values.id && (<LabeledInput
                 name='id'
                 title='Movie id'

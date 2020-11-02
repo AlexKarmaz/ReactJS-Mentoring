@@ -1,0 +1,852 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieFormWithFormik errors should be displayed if all fields are empty and onSubmit is called 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="movieForm"
+      >
+        <label>
+          Title
+          <input
+            name="title"
+            placeholder="Title here"
+            type="text"
+            value=""
+          />
+        </label>
+        <p
+          class="labeledInput-error"
+        >
+          Title is required
+        </p>
+        <label>
+          Release date
+          <input
+            name="release_date"
+            type="date"
+            value=""
+          />
+        </label>
+        <label>
+          Movie url
+          <input
+            name="poster_path"
+            placeholder="Movie URL here"
+            type="url"
+            value=""
+          />
+        </label>
+        <p
+          class="labeledInput-error"
+        >
+          Poster is required
+        </p>
+        <label>
+          Genres
+          <div
+            class="go2139093995 multi-select"
+          >
+            <div
+              aria-expanded="false"
+              aria-readonly="true"
+              class="go2646822163 dropdown-container"
+              tabindex="0"
+            >
+              <div
+                class="go2642161244 dropdown-heading"
+              >
+                <div
+                  class="dropdown-heading-value"
+                >
+                  <span
+                    class="gray"
+                  >
+                    Select Genre
+                  </span>
+                </div>
+                <svg
+                  class="dropdown-heading-dropdown-arrow gray"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="24"
+                >
+                  <path
+                    d="M6 9L12 15 18 9"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </label>
+        <label>
+          Overview
+          <input
+            name="overview"
+            placeholder="Overview here"
+            type="text"
+            value=""
+          />
+        </label>
+        <p
+          class="labeledInput-error"
+        >
+          Movie description is required
+        </p>
+        <label>
+          Runtime
+          <input
+            name="runtime"
+            placeholder="Runtime here"
+            type="number"
+            value=""
+          />
+        </label>
+        <div
+          class="movieForm-footer"
+        >
+          <button
+            class="styledButton undefined medium reset"
+            type="button"
+          >
+            Reset
+          </button>
+          <button
+            class="styledButton undefined medium confirm"
+            type="button"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="movieForm"
+    >
+      <label>
+        Title
+        <input
+          name="title"
+          placeholder="Title here"
+          type="text"
+          value=""
+        />
+      </label>
+      <p
+        class="labeledInput-error"
+      >
+        Title is required
+      </p>
+      <label>
+        Release date
+        <input
+          name="release_date"
+          type="date"
+          value=""
+        />
+      </label>
+      <label>
+        Movie url
+        <input
+          name="poster_path"
+          placeholder="Movie URL here"
+          type="url"
+          value=""
+        />
+      </label>
+      <p
+        class="labeledInput-error"
+      >
+        Poster is required
+      </p>
+      <label>
+        Genres
+        <div
+          class="go2139093995 multi-select"
+        >
+          <div
+            aria-expanded="false"
+            aria-readonly="true"
+            class="go2646822163 dropdown-container"
+            tabindex="0"
+          >
+            <div
+              class="go2642161244 dropdown-heading"
+            >
+              <div
+                class="dropdown-heading-value"
+              >
+                <span
+                  class="gray"
+                >
+                  Select Genre
+                </span>
+              </div>
+              <svg
+                class="dropdown-heading-dropdown-arrow gray"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                width="24"
+              >
+                <path
+                  d="M6 9L12 15 18 9"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label>
+        Overview
+        <input
+          name="overview"
+          placeholder="Overview here"
+          type="text"
+          value=""
+        />
+      </label>
+      <p
+        class="labeledInput-error"
+      >
+        Movie description is required
+      </p>
+      <label>
+        Runtime
+        <input
+          name="runtime"
+          placeholder="Runtime here"
+          type="number"
+          value=""
+        />
+      </label>
+      <div
+        class="movieForm-footer"
+      >
+        <button
+          class="styledButton undefined medium reset"
+          type="button"
+        >
+          Reset
+        </button>
+        <button
+          class="styledButton undefined medium confirm"
+          type="button"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`MovieFormWithFormik onSubmit should be called if all fields are populated 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="movieForm"
+      >
+        <label>
+          Movie id
+          <input
+            name="id"
+            readonly=""
+            type="text"
+            value="1"
+          />
+        </label>
+        <label>
+          Title
+          <input
+            name="title"
+            placeholder="Title here"
+            type="text"
+            value="test"
+          />
+        </label>
+        <label>
+          Release date
+          <input
+            name="release_date"
+            type="date"
+            value="2020-10-30"
+          />
+        </label>
+        <label>
+          Movie url
+          <input
+            name="poster_path"
+            placeholder="Movie URL here"
+            type="url"
+            value="https://test.com"
+          />
+        </label>
+        <label>
+          Genres
+          <div
+            class="go2139093995 multi-select"
+          >
+            <div
+              aria-expanded="false"
+              aria-readonly="true"
+              class="go2646822163 dropdown-container"
+              tabindex="0"
+            >
+              <div
+                class="go2642161244 dropdown-heading"
+              >
+                <div
+                  class="dropdown-heading-value"
+                >
+                  <span>
+                    Comedy
+                  </span>
+                </div>
+                <svg
+                  class="dropdown-heading-dropdown-arrow gray"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="24"
+                >
+                  <path
+                    d="M6 9L12 15 18 9"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </label>
+        <label>
+          Overview
+          <input
+            name="overview"
+            placeholder="Overview here"
+            type="text"
+            value="test"
+          />
+        </label>
+        <label>
+          Runtime
+          <input
+            name="runtime"
+            placeholder="Runtime here"
+            type="number"
+            value="100"
+          />
+        </label>
+        <div
+          class="movieForm-footer"
+        >
+          <button
+            class="styledButton undefined medium reset"
+            type="button"
+          >
+            Reset
+          </button>
+          <button
+            class="styledButton undefined medium confirm"
+            type="button"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="movieForm"
+    >
+      <label>
+        Movie id
+        <input
+          name="id"
+          readonly=""
+          type="text"
+          value="1"
+        />
+      </label>
+      <label>
+        Title
+        <input
+          name="title"
+          placeholder="Title here"
+          type="text"
+          value="test"
+        />
+      </label>
+      <label>
+        Release date
+        <input
+          name="release_date"
+          type="date"
+          value="2020-10-30"
+        />
+      </label>
+      <label>
+        Movie url
+        <input
+          name="poster_path"
+          placeholder="Movie URL here"
+          type="url"
+          value="https://test.com"
+        />
+      </label>
+      <label>
+        Genres
+        <div
+          class="go2139093995 multi-select"
+        >
+          <div
+            aria-expanded="false"
+            aria-readonly="true"
+            class="go2646822163 dropdown-container"
+            tabindex="0"
+          >
+            <div
+              class="go2642161244 dropdown-heading"
+            >
+              <div
+                class="dropdown-heading-value"
+              >
+                <span>
+                  Comedy
+                </span>
+              </div>
+              <svg
+                class="dropdown-heading-dropdown-arrow gray"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                width="24"
+              >
+                <path
+                  d="M6 9L12 15 18 9"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label>
+        Overview
+        <input
+          name="overview"
+          placeholder="Overview here"
+          type="text"
+          value="test"
+        />
+      </label>
+      <label>
+        Runtime
+        <input
+          name="runtime"
+          placeholder="Runtime here"
+          type="number"
+          value="100"
+        />
+      </label>
+      <div
+        class="movieForm-footer"
+      >
+        <button
+          class="styledButton undefined medium reset"
+          type="button"
+        >
+          Reset
+        </button>
+        <button
+          class="styledButton undefined medium confirm"
+          type="button"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`MovieFormWithFormik should be rendered correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="movieForm"
+      >
+        <label>
+          Title
+          <input
+            name="title"
+            placeholder="Title here"
+            type="text"
+            value=""
+          />
+        </label>
+        <label>
+          Release date
+          <input
+            name="release_date"
+            type="date"
+            value=""
+          />
+        </label>
+        <label>
+          Movie url
+          <input
+            name="poster_path"
+            placeholder="Movie URL here"
+            type="url"
+            value=""
+          />
+        </label>
+        <label>
+          Genres
+          <div
+            class="go2139093995 multi-select"
+          >
+            <div
+              aria-expanded="false"
+              aria-readonly="true"
+              class="go2646822163 dropdown-container"
+              tabindex="0"
+            >
+              <div
+                class="go2642161244 dropdown-heading"
+              >
+                <div
+                  class="dropdown-heading-value"
+                >
+                  <span
+                    class="gray"
+                  >
+                    Select Genre
+                  </span>
+                </div>
+                <svg
+                  class="dropdown-heading-dropdown-arrow gray"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="24"
+                >
+                  <path
+                    d="M6 9L12 15 18 9"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </label>
+        <label>
+          Overview
+          <input
+            name="overview"
+            placeholder="Overview here"
+            type="text"
+            value=""
+          />
+        </label>
+        <label>
+          Runtime
+          <input
+            name="runtime"
+            placeholder="Runtime here"
+            type="number"
+            value=""
+          />
+        </label>
+        <div
+          class="movieForm-footer"
+        >
+          <button
+            class="styledButton undefined medium reset"
+            type="button"
+          >
+            Reset
+          </button>
+          <button
+            class="styledButton undefined medium confirm"
+            type="button"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="movieForm"
+    >
+      <label>
+        Title
+        <input
+          name="title"
+          placeholder="Title here"
+          type="text"
+          value=""
+        />
+      </label>
+      <label>
+        Release date
+        <input
+          name="release_date"
+          type="date"
+          value=""
+        />
+      </label>
+      <label>
+        Movie url
+        <input
+          name="poster_path"
+          placeholder="Movie URL here"
+          type="url"
+          value=""
+        />
+      </label>
+      <label>
+        Genres
+        <div
+          class="go2139093995 multi-select"
+        >
+          <div
+            aria-expanded="false"
+            aria-readonly="true"
+            class="go2646822163 dropdown-container"
+            tabindex="0"
+          >
+            <div
+              class="go2642161244 dropdown-heading"
+            >
+              <div
+                class="dropdown-heading-value"
+              >
+                <span
+                  class="gray"
+                >
+                  Select Genre
+                </span>
+              </div>
+              <svg
+                class="dropdown-heading-dropdown-arrow gray"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                width="24"
+              >
+                <path
+                  d="M6 9L12 15 18 9"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </label>
+      <label>
+        Overview
+        <input
+          name="overview"
+          placeholder="Overview here"
+          type="text"
+          value=""
+        />
+      </label>
+      <label>
+        Runtime
+        <input
+          name="runtime"
+          placeholder="Runtime here"
+          type="number"
+          value=""
+        />
+      </label>
+      <div
+        class="movieForm-footer"
+      >
+        <button
+          class="styledButton undefined medium reset"
+          type="button"
+        >
+          Reset
+        </button>
+        <button
+          class="styledButton undefined medium confirm"
+          type="button"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
