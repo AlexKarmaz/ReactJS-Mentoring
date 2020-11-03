@@ -62,3 +62,15 @@ or Enzyme, react-test-renderer, React-test-utils, etc.):</p>
 <p>3. Measure coverage level with coverage report.</p>
 <p>4. Cover “Add movie” modal dialog components with unit-tests, mock all external
 dependencies using Jest mocks </p>
+
+<h2>Task 10 (Server-Side Rendering)</h2>
+<p>Implement server rendering in your NodeJS application. Use async actions, redux should provide initial state from server.</p>
+<p>Server should handle query parameters to compute correct initial state.</p>
+<p>Implement route masking. Next.js provides this functionality out of the box, but its usage
+is not required. Example of route masking:</p>
+<p>localhost/search/Hello%20Friend</p>
+<p>localhost/search/Search%20Query</p>
+<p>When a new user lands on the page with such URL, you should perform search and display
+results</p>
+<p>Add code splitting to your app. You can use dynamic import() syntax in conjunction with
+webpack and React.lazy, some library (react-loadable), or next.js.</p>
