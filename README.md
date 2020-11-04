@@ -1,4 +1,21 @@
 # ReactJS-Mentoring
+<br>
+
+<h1>Get started</h2>
+<h2>Install all dependencies</h2>
+<p>npm install</p>
+
+<h2>Start</h2>
+<p>npm start</p>
+
+<h2>Start using Server Side Rendering</h2>
+<p>npm run build:dev</p>
+<p>npm run build:server</p>
+<p>npm run start:server</p>
+
+<br>
+
+<h1>Tasks done:</h1>
 
 <h2>Task 2: Webpack</h2>
 <p>Create package.json file and install React, Redux, React-Redux, React-Router, Jest. Install and configure Webpack & 
