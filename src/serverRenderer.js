@@ -21,7 +21,6 @@ function renderHtml(html, store) {
 
 export default function serverRenderer() {
     return (req, res) => {
-        debugger;
         const context = {};
         const store = createStore({});
 
