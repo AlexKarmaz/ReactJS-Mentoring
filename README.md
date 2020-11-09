@@ -1,4 +1,21 @@
 # ReactJS-Mentoring
+<br>
+
+<h1>Get started</h2>
+<h2>Install all dependencies</h2>
+<p>npm install</p>
+
+<h2>Start</h2>
+<p>npm start</p>
+
+<h2>Start using Server Side Rendering</h2>
+<p>npm run build:dev</p>
+<p>npm run build:server</p>
+<p>npm run start:server</p>
+
+<br>
+
+<h1>Tasks done:</h1>
 
 <h2>Task 2: Webpack</h2>
 <p>Create package.json file and install React, Redux, React-Redux, React-Router, Jest. Install and configure Webpack & 
@@ -62,3 +79,15 @@ or Enzyme, react-test-renderer, React-test-utils, etc.):</p>
 <p>3. Measure coverage level with coverage report.</p>
 <p>4. Cover “Add movie” modal dialog components with unit-tests, mock all external
 dependencies using Jest mocks </p>
+
+<h2>Task 10 (Server-Side Rendering)</h2>
+<p>Implement server rendering in your NodeJS application. Use async actions, redux should provide initial state from server.</p>
+<p>Server should handle query parameters to compute correct initial state.</p>
+<p>Implement route masking. Next.js provides this functionality out of the box, but its usage
+is not required. Example of route masking:</p>
+<p>localhost/search/Hello%20Friend</p>
+<p>localhost/search/Search%20Query</p>
+<p>When a new user lands on the page with such URL, you should perform search and display
+results</p>
+<p>Add code splitting to your app. You can use dynamic import() syntax in conjunction with
+webpack and React.lazy, some library (react-loadable), or next.js.</p>
