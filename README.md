@@ -91,3 +91,13 @@ is not required. Example of route masking:</p>
 results</p>
 <p>Add code splitting to your app. You can use dynamic import() syntax in conjunction with
 webpack and React.lazy, some library (react-loadable), or next.js.</p>
+
+<h2>Task 11 (Patterns, tips & tricks, Useful
+libraries)</h2>
+<p>1. Apply Airbnb best practices to your project: clean up the code of your application: follow the
+required naming convention, make sure code has proper alignment and there are no redundant spaces, order all your methods in a right way.</p>
+<p>2. Add storybook to your project; 
+Add 3 components to storybook with knobs. </p>
+<p>3. Highlight patterns which were used in the homework by comments in code “// PATTERN: {name}”.</p>
+<p>4.  Apply React optimization techniques.</p>
+<p>5. Run performance audit (by lighthouse) of your application and increase performance index.</p>
