@@ -1,6 +1,7 @@
 import React from 'react';
 import './LabeledInput.css';
 
+//PATTERN: Stateless component
 const LabeledInput = ({
     title,
     name,

@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router';
 import MoviePreview from './MoviePreview';
 import { movieActions, commonActions } from '../../store/actions';
 
+//PATTERN: Container component
 const MoviePreviewContainer = ({loadMovieById, searchString, updateMovies, setSearchString}) => {
   const { id } = useParams();
   const history = useHistory();

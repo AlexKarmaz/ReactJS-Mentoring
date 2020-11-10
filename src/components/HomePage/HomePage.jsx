@@ -18,6 +18,7 @@ import MoviesLoader from '../MoviesLoader';
 import {commonActions} from '../../store/actions';
 import { useHistory, useLocation } from 'react-router';
 
+//PATTERN: Container component
 const HomePage = ({
     filteredMovies,
     addMovieDialog,

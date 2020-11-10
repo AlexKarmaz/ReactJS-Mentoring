@@ -1,3 +1,4 @@
+//PATTERN: Server Side Rendering
 const express = require('express');
 const serverRenderer = require('../dist/serverRenderer').default;
 
