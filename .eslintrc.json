@@ -19,7 +19,8 @@
     },
     "plugins": [
         "react",
-        "jest"
+        "jest",
+        "react-hooks"
     ],
     "rules": {
         "indent": [
