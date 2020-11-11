@@ -28,6 +28,11 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-knobs": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/react": "^6.0.28",
     "@testing-library/react": "^10.4.7",
     "babel-jest": "^26.2.2",
     "babel-loader": "^8.0.2",
@@ -50,6 +55,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "prop-types": "^15.7.2",
     "react-hot-loader": "^4.12.21",
+    "react-is": "^17.0.1",
     "react-test-renderer": "^16.13.1",
     "redux-mock-store": "^1.5.4",
     "style-loader": "^0.23.0",
@@ -70,7 +76,9 @@
     "test:update": "jest -u",
     "test:watch": "npm test -- --watch",
     "lint": "eslint ./src --ext .js,.jsx",
-    "lint:fix": "eslint ./src --ext .js,.jsx --fix"
+    "lint:fix": "eslint ./src --ext .js,.jsx --fix",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
   },
   "repository": {
     "type": "git",
