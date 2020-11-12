@@ -40,8 +40,8 @@ const Filter = ({genres, setGenreForFilter, genreForFilter}) => {
         <div className='filter'>
             <div className='filterLabel'>Filter by genre</div>
             <div className='filterMenu'>{genreForFilter}</div>
-            <button className='caretButton' onClick={() => toggleIsOpened()}>
-                <span className={isOpened ? 'caret-up' : 'caret-down'}></span>
+            <button className='caretButton' aria-label={isOpened ? 'close' : 'open'} onClick={() => toggleIsOpened()}>
+            <span className={isOpened ? 'caret-up' : 'caret-down'}></span>
             </button>
             {isOpened && <Menu menuItems={modifiedGenres}/>}
         </div>

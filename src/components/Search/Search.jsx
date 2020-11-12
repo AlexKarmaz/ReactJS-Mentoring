@@ -56,6 +56,7 @@ const Search = ({onSearch, onAddMovie}) => {
                 <div className='search'>
                     <input
                         className='searchInput'
+                        aria-label="Search"
                         type='text'
                         placeholder='What do you want to watch?'
                         value={searchStr}

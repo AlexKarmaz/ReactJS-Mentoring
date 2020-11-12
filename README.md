@@ -9,7 +9,7 @@
 <p>npm start</p>
 
 <h2>Start using Server Side Rendering</h2>
-<p>npm run build:dev</p>
+<p>npm run build:dev or :prod</p>
 <p>npm run build:server</p>
 <p>npm run start:server</p>
 

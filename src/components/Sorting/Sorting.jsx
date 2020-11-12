@@ -25,7 +25,7 @@ const Sorting = ({ options }) => {
         <div className='sorting'>
             <div className='sortingLabel'>Sort by</div>
             <div className='sortingMenu'>{selected}</div>
-            <button className='caretButton' onClick={() => /*setIsOpened(!isOpened)*/ toggleIsOpened()}>
+            <button className='caretButton' aria-label={isOpened ? 'close' : 'open'} onClick={() => /*setIsOpened(!isOpened)*/ toggleIsOpened()}>
                 <span className={isOpened ? 'caret-up' : 'caret-down'}></span>
             </button>
             {isOpened && <Menu menuItems={modifiedOptions}/>}
