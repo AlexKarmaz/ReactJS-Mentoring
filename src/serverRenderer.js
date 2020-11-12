@@ -19,6 +19,7 @@ function renderHtml(html, store) {
     );
 }
 
+//PATTERN: Server Side Rendering
 export default function serverRenderer() {
     return (req, res) => {
         const context = {};

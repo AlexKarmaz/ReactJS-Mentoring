@@ -30,7 +30,7 @@ const MovieCard = ({ movieItem, onClick, onMovieDelete, onMovieEdit}) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <img onClick={onMovieClick} className='moviePoster'  onError={replaceToDefaultPoster} src={src ? src : defaultPoster} />
+            <img onClick={onMovieClick} alt={movieItem.title} className='moviePoster'  onError={replaceToDefaultPoster} src={src ? src : defaultPoster} />
             <div className='movieInfo'>
                 <h3>{movieItem.title}</h3>
                 <p className='movieYear'>{new Date(movieItem.release_date).getFullYear()}</p>
